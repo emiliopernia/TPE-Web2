@@ -1,0 +1,80 @@
+.title{
+    background-color: black;
+    color: whitesmoke;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    border-bottom: solid 3px gold;
+    font-family:'Arial Narrow', Arial, sans-serif;
+    text-transform: uppercase;
+}
+
+.filter form{
+    background-color: black;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+.table {
+    width:100%;
+    border: solid 5px;
+    font-family:'Gill Sans', 'Gill Sans MT', 'Trebuchet MS', sans-serif;
+}
+
+.table thead tr th{
+    display: none;
+}
+
+.table tr td:first-child {
+    background: black;
+    color: whitesmoke;
+    font-size:20px;
+}
+
+.table tbody td {
+    display: block;
+    text-align:center;
+}
+
+
+@media only screen and (min-width:700px) {
+    .table{
+        display:flex;
+        flex-direction: column;
+        align-items: center;
+        background-image: url(../images/backgroundHeader.jpg);
+    }
+
+    .table th, .table td{
+        width: 120px;
+        height: 50px;
+        padding: 3px;
+    }
+
+    .table thead tr th, .table thead tr{
+        display: flex;
+    }
+
+    .table thead, .table tbody{
+       display: flex;
+       flex-direction: column;
+       width: max-content;
+    }
+
+    .table tbody tr{
+        display: flex;   
+    }
+ 
+    .table thead th, .table tbody td:first-child {
+        background-color: black;
+        color: whitesmoke;
+        font-size: 18px;
+    }
+    
+    .table tbody td{
+        background-color: whitesmoke;
+        display: flex;
+        justify-content: center; 
+        align-items: center;
+    }
+}

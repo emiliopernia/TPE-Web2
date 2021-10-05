@@ -1,0 +1,22 @@
+.rankings-wraper{
+    background-image: url(../images/backgroundHeader.jpg);
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+}
+
+.weightclass-table-wraper{
+    background-color: whitesmoke;
+    margin: 10px;
+    display: flex;
+    flex-direction: column;
+    width: 40%;
+}
+
+.weightclass-table-wraper h3{
+    background-color: black;
+    color: whitesmoke;
+    text-transform: uppercase;
+    margin: 0;
+    padding:3px;
+}
