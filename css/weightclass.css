@@ -1,0 +1,40 @@
+.weightclassWraper{
+    display: flex;
+    flex-direction: column;
+    background-color: whitesmoke;
+    
+}
+.tableWeightclass {
+    margin:0;
+    width:100%;
+    font-family:'Gill Sans', 'Gill Sans MT', 'Trebuchet MS', sans-serif;
+    display: flex;
+    flex-direction: column;
+}
+
+.tableWeightclass h3{
+    margin: 0.1em;
+    padding:0.5em;
+    display: flex;
+    justify-content: center;
+    background-color: rgb(80, 4, 4);
+    color: whitesmoke;
+}
+
+.tableWeightclass tbody td {
+    display: block;
+    text-align:center;
+}
+
+.tableWeightclass tbody tr :first-child{
+    background-color: black;
+    color: whitesmoke;
+}
+
+@media only screen and (min-width:700px) {
+    .weightclassWraper{
+        display:grid;
+        grid-template-columns: repeat(3, 1fr);
+    }
+    
+}

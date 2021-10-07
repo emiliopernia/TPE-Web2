@@ -42,7 +42,7 @@ switch ($params[0]) {
         break;
     case 'rankings':
         $rankingsController->showRankings();
-        break;     
+        break;    
     default: 
         echo('404 Page not found'); 
         break;

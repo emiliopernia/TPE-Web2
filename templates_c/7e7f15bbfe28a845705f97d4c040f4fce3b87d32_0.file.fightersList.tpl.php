@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.39, created on 2021-10-05 01:35:09
+/* Smarty version 3.1.39, created on 2021-10-07 02:01:48
   from 'C:\xampp\htdocs\Web2\TpePernia\templates\fightersList.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_615b8fad127438_74928451',
+  'unifunc' => 'content_615e38ec283cf5_71407482',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '7e7f15bbfe28a845705f97d4c040f4fce3b87d32' => 
     array (
       0 => 'C:\\xampp\\htdocs\\Web2\\TpePernia\\templates\\fightersList.tpl',
-      1 => 1633390490,
+      1 => 1633564903,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_615b8fad127438_74928451 (Smarty_Internal_Template $_smarty_tpl) {
+function content_615e38ec283cf5_71407482 (Smarty_Internal_Template $_smarty_tpl) {
 ?><h1 class="title">Peleadores</h1>
 <div class="filter">
     <form action="weightclass" method=POST>
@@ -66,7 +66,7 @@ $_smarty_tpl->tpl_vars['fighter']->do_else = false;
             <td><?php echo $_smarty_tpl->tpl_vars['fighter']->value->weightClassName;?>
 </td>
             <td><a href="showFighter/<?php echo $_smarty_tpl->tpl_vars['fighter']->value->id_fighter;?>
-">[algun boton]</a></td>
+"><img src="images/boton.png" alt="Ver mas"></a></td>
         </tr> 
         <?php
 }

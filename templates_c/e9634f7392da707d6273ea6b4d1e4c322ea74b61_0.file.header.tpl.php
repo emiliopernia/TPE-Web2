@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.39, created on 2021-10-04 00:12:15
+/* Smarty version 3.1.39, created on 2021-10-07 02:25:44
   from 'C:\xampp\htdocs\Web2\TpePernia\templates\header.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_615a2abf9b5bc8_17158687',
+  'unifunc' => 'content_615e3e88a3c4a9_01195397',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'e9634f7392da707d6273ea6b4d1e4c322ea74b61' => 
     array (
       0 => 'C:\\xampp\\htdocs\\Web2\\TpePernia\\templates\\header.tpl',
-      1 => 1633298964,
+      1 => 1633566254,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_615a2abf9b5bc8_17158687 (Smarty_Internal_Template $_smarty_tpl) {
+function content_615e3e88a3c4a9_01195397 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <html lang="en">
 <head>
@@ -32,9 +32,11 @@ function content_615a2abf9b5bc8_17158687 (Smarty_Internal_Template $_smarty_tpl)
     <link rel="shortcut icon" href="images/ufc.ico">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/fighters.css">
+    <link rel="stylesheet" href="css/fighter.css">
     <link rel="stylesheet" href="css/home.css">
     <link rel="stylesheet" href="css/login.css">
-    <link rel="stylesheet" href="css/rankings.css">
+    <link rel="stylesheet" href="css/weightclass.css">
+
     <title>UFC All Access</title>
 </head>
 <body>

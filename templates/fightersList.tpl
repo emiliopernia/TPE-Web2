@@ -25,7 +25,7 @@
             <td>{$fighter->name}</td>
             <td>{$fighter->nickname}</td>
             <td>{$fighter->weightClassName}</td>
-            <td><a href="showFighter/{$fighter->id_fighter}">[algun boton]</a></td>
+            <td><a href="showFighter/{$fighter->id_fighter}"><img src="images/boton.png" alt="Ver mas"></a></td>
         </tr> 
         {/foreach}
         

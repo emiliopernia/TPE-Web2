@@ -8,9 +8,11 @@
     <link rel="shortcut icon" href="images/ufc.ico">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/fighters.css">
+    <link rel="stylesheet" href="css/fighter.css">
     <link rel="stylesheet" href="css/home.css">
     <link rel="stylesheet" href="css/login.css">
-    <link rel="stylesheet" href="css/rankings.css">
+    <link rel="stylesheet" href="css/weightclass.css">
+
     <title>UFC All Access</title>
 </head>
 <body>

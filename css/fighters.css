@@ -1,12 +1,15 @@
 .title{
-    background-color: black;
+    background-color: rgb(80, 4, 4);
     color: whitesmoke;
     margin: 0;
     display: flex;
     justify-content: center;
-    border-bottom: solid 3px gold;
     font-family:'Arial Narrow', Arial, sans-serif;
     text-transform: uppercase;
+}
+
+.filter{
+    border:solid 0.2em black;
 }
 
 .filter form{
@@ -15,13 +18,16 @@
     flex-direction: row;
     justify-content: center;
 }
+
 .table {
+    margin:0;
     width:100%;
     border: solid 5px;
     font-family:'Gill Sans', 'Gill Sans MT', 'Trebuchet MS', sans-serif;
 }
 
 .table thead tr th{
+    
     display: none;
 }
 
@@ -34,10 +40,20 @@
 .table tbody td {
     display: block;
     text-align:center;
+    
+}
+
+.table img{
+    width: 30px;
+}
+
+.filter a, .table a {
+    text-decoration: none;
 }
 
 
 @media only screen and (min-width:700px) {
+    
     .table{
         display:flex;
         flex-direction: column;
@@ -77,4 +93,5 @@
         justify-content: center; 
         align-items: center;
     }
+
 }

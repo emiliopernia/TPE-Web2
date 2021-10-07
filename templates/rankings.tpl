@@ -1,27 +1,22 @@
-<div class= "rankings-wraper">
+<div class= "weightclassWraper">
     
     {foreach from=$weightclasses item=weightclass}
-    <div class="weightclass-table-wraper">       
+    <div class= "tableWeightclass"> 
+    <h3>{$weightclass->weightClassName}</h3>      
         <table>
-            <h3>{$weightclass->weightClassName}</h3>
-            <thead>
-                <th>Nombre</th>
-                <th>Apodo</th>
-                <th>Record</th>
-                <th>Ranking</th>
-            </thead>
             <tbody>
                 {foreach from=$fighters item=fighter} 
                 {if $fighter->weightClassName==$weightclass->weightClassName}   
                     <tr>
-                    <td>{$fighter->name}</td>
-                    <td>{$fighter->nickname}</td>
+                    <td>{$fighter->name} - Nº{$fighter->weightClassRank}</td>
+                    <td>"{$fighter->nickname}"</td>
                     <td>{$fighter->record}</td>
-                    <td>{$fighter->weightClassRank}</td>
+                    
                 </tr> 
                 {/if}
                 {/foreach}            
-        </tbody>
+            </tbody>
+    
         </table>
     </div> 
     {/foreach}

@@ -1,0 +1,45 @@
+.fighterWraper{
+    display: flex;
+    flex-direction: column;
+}
+
+.listWraper{
+    display: flex;
+    justify-content: center;
+}
+.listWraper ul{
+    display: flex;
+    flex-direction: column;
+    padding:0; 
+    background-color: black;
+    color: whitesmoke;
+    border: solid 3px black;
+
+}
+
+.listWraper ul :first-child{
+    border: double 10px black; 
+    background-color: whitesmoke;
+}
+
+.listWraper li{
+    font-size: larger;
+    font-family:'Gill Sans', 'Gill Sans MT', 'Trebuchet MS', sans-serif;
+}
+
+.fighterWraper a{
+    text-decoration: none;
+}
+
+.fighterWraper button{
+    display: flex;
+    justify-content: center;
+    width:40px;
+}
+.fighterWraper a img{
+    width: 30px;
+}
+
+.fighterWraper ul li{
+    list-style: none;
+}
