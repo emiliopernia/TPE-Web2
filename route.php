@@ -42,6 +42,12 @@ switch ($params[0]) {
         break;
     case 'rankings':
         $rankingsController->showRankings();
+        break;
+    case 'register':
+        $loginController->register();
+        break;  
+    case 'login':
+        $loginController->loginForm();
         break;    
     default: 
         echo('404 Page not found'); 

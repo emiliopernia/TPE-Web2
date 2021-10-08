@@ -1,22 +1,26 @@
-.div-content-login {
+.div-content-user {
+    text-transform: uppercase;
+    font-family:'Arial Narrow', Arial, sans-serif;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    align-items: center;
     background-image: url(../images/backgroundRegistrarse.jpg);
     background-size: contain;
 }
 
 .div-login {
     width: 40%;
-    margin-top: 40px;
-    border: solid black 2px;
+    margin-top: 10px;
+    border: solid black 4px;
     background-color: rgba(160, 46, 46, 0.808);
     justify-content: center;
     padding-bottom: 20px;
 }
 
 .div-login h3 {
-    background-color: rgba(201, 58, 58, 0.808);
+    background-color: rgba(167, 0, 0, 0.808);
     margin: 0px;
+    border-bottom: solid black 4px;
     color: whitesmoke;
     text-align: center;
     padding: 20px;
@@ -38,7 +42,7 @@ form label{
 
 
 @media only screen and (min-width:700px) {
-    .div-content-login{
+    .div-content-user{
         background-repeat: no-repeat;
         background-size: auto;
         background-position: center;
