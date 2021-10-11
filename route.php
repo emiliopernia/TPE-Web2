@@ -3,6 +3,7 @@ require_once('Controller/FightersController.php');
 require_once('Controller/HomeController.php');
 require_once('Controller/LoginController.php');
 require_once('Controller/RankingsController.php');
+require_once('Controller/WeightclassController.php');
 
 define('BASE_URL', '//'.$_SERVER['SERVER_NAME'] . ':' . $_SERVER['SERVER_PORT'] . dirname($_SERVER['PHP_SELF']).'/');
 
@@ -22,6 +23,7 @@ $homeController= new HomeController();
 $fightersController= new FightersController();
 $loginController= new LoginController();
 $rankingsController= new RankingsController();
+$weightclassController= new WeightclassController();
 
 switch ($params[0]) {
     case 'home': 
@@ -34,21 +36,46 @@ switch ($params[0]) {
         $fightersController->showFighter($params[1]); 
         break;
     case 'weightclass': 
-        $filtro = $_POST['input_weightclass'];
-        $fightersController->showByCategory($filtro);
+        $fightersController->showByCategory($_POST['input_weightclass']);
+        break;
+    case 'addFighter':
+        $fightersController->addFighter($_POST['name'], $_POST['nickname'],$_POST['nationality'],$_POST['age'],$_POST['record'],
+        $_POST['height'],$_POST['weight'],$_POST['weightclass'],$_POST['rank']);
+        break;
+    case 'delete':
+        $fightersController->deleteFighter($params[1]);
+        break;
+    case 'editFighterPage':
+        $fightersController->editFighterPage($params[1]);
+        break;
+    case 'editFighter':
+        $fightersController->editFighter($params[1],$_POST['name'], $_POST['nickname'],$_POST['nationality'],$_POST['age'],$_POST['record'],
+        $_POST['height'],$_POST['weight'],$_POST['weightclass'],$_POST['rank']);
+        break; 
+    case 'rankings':
+        $rankingsController->showRankings();
         break;
     case 'loginForm': 
         $loginController->showLoginForm();
-        break;
-    case 'rankings':
-        $rankingsController->showRankings();
         break;
     case 'register':
         $loginController->register();
         break;  
     case 'login':
         $loginController->loginForm();
-        break;    
+        break;  
+    case 'logout':
+        $loginController->logout();
+        break; 
+    case 'createWeightclass':
+        $weightclassController->createNewWeightclass($_POST['weightclass'], $_POST['maxWeight'], $_POST['minWeight']);
+        break; 
+    case 'deleteWeightclass':
+        $weightclassController->deleteWeightclass($_POST['weightclass']) ;
+        break;
+    case 'editWeightclass':
+        $weightclassController->editWeightclass($_POST['id'],$_POST['weightclass'],$_POST['maxWeight'],$_POST['minWeight']);
+     
     default: 
         echo('404 Page not found'); 
         break;

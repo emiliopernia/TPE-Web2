@@ -1,4 +1,4 @@
-.title{
+.fighters-title{
     background-color: rgb(80, 4, 4);
     color: whitesmoke;
     margin: 0;
@@ -51,6 +51,34 @@
     text-decoration: none;
 }
 
+/*Formulario para creacion de peleadores*/
+.formEdit{
+    display: flex;
+    flex-direction: column;
+    background-color: whitesmoke;
+    margin-left: 2px;
+    text-transform: uppercase;
+}
+
+.formEdit a {
+    text-decoration: none;
+    color: black;
+}
+
+.formEdit label{
+    margin: 0;
+    background-color: gold;
+    border: solid 1px;
+}
+
+.formEdit h2{
+    background-color: black;
+    color: whitesmoke;
+    margin: 10px 0 3px 0 ;
+    border: solid 5px;
+    text-align: center;
+}
+
 
 @media only screen and (min-width:700px) {
     
@@ -69,6 +97,7 @@
 
     .table thead tr th, .table thead tr{
         display: flex;
+        justify-content: center;
     }
 
     .table thead, .table tbody{
@@ -92,6 +121,23 @@
         display: flex;
         justify-content: center; 
         align-items: center;
+    }
+
+/*Formulario para creacion de peleadores*/
+    .formsWrapper{
+        display:grid;
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .formEdit{
+        border: solid 5px;
+        margin-left: 0;
+        background-color: rgb(80, 4, 4);;
+    }
+
+    .formEdit h2{
+        border: solid 5px black;
+        margin-bottom: 0;
     }
 
 }

@@ -38,4 +38,23 @@ class FightersModel{
         $fighters = $sentencia->fetchAll(PDO::FETCH_OBJ);
         return $fighters;
     }
+
+    function addFighter($name, $nickname,$nationality,$age,$record,$height,$weight,$weightclass_id,$rank){
+        $sentencia = $this->db->prepare("INSERT INTO fighter (name, nickname, nationality, age, record,
+         height, weight, weightClass_id, weightClassRank) VALUES (?,?,?,?,?,?,?,?,?)");
+         $sentencia->execute(array($name, $nickname,$nationality,$age,$record,$height,$weight,$weightclass_id,$rank));
+
+    }
+
+    function deleteFighter($id){
+        $sentencia=$this->db->prepare("DELETE FROM fighter WHERE id_fighter=?");
+        $sentencia->execute(array($id));
+
+    }
+
+    function saveChanges($id,$name, $nickname,$nationality,$age,$record,$height,$weight,$weightclass_id,$rank){
+        $sentencia=$this->db->prepare("UPDATE fighter SET name='$name', nickname='$nickname', nationality='$nationality', age='$age',
+        record='$record',height='$height',weight='$weight',weightClass_id='$weightclass_id',weightClassRank='$rank' WHERE id_fighter=?");
+        $sentencia->execute(array($id));
+    }
 }

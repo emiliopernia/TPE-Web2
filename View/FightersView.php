@@ -22,6 +22,14 @@ class FightersView{
         $this->smarty->display('templates/footer.tpl');
     }
 
+    function showUserFightersView($fighters){
+        $this->smarty->display('templates/header.tpl');
+        $this->smarty->assign('fighters',$fighters);
+        $this->smarty->display('templates/userFightersList.tpl');
+        $this->smarty->display('templates/footer.tpl');
+    }
+        
+
     
 
     function showFighterView($fighter){
@@ -29,5 +37,13 @@ class FightersView{
         $this->smarty->assign('fighter',$fighter);
         $this->smarty->display('templates/fighterInfoPage.tpl');
         $this->smarty->display('templates/footer.tpl');
+    }
+
+    function editFighter($fighter){
+        $this->smarty->display('templates/header.tpl');
+        $this->smarty->assign('fighter',$fighter);
+        $this->smarty->display('templates/editFighterForm.tpl');
+        $this->smarty->display('templates/footer.tpl');
+       
     }
 }

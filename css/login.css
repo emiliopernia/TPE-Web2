@@ -14,7 +14,7 @@
     border: solid black 4px;
     background-color: rgba(160, 46, 46, 0.808);
     justify-content: center;
-    padding-bottom: 20px;
+
 }
 
 .div-login h3 {
@@ -29,6 +29,11 @@
 form, .div-login{
     display: flex;
     flex-direction: column;
+}
+
+.div-login a{
+    text-decoration: none;
+    color: black;
 }
 
 

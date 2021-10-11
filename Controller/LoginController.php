@@ -8,6 +8,7 @@ class LoginController{
     private $view;
     private $model;
     
+    
 
     function __construct(){
         $this->view= new LoginView();
@@ -37,14 +38,19 @@ class LoginController{
             $user= $this->model->getUser($userEmail);
 
             if($user && password_verify($userPassword,$user->password)){
+                session_start();
+                $_SESSION['email']=$userEmail;
                 $this->view->showLoginForm($user->userName);
             }else{
-                $this->view->showLoginForm("Usuario no identificado");
-
-            }
-            
-            
+                $this->view->showLoginForm("No identificado");
+            }     
         }
+    }
+
+    function logout(){
+        session_start();
+        session_destroy();
+        $this->view->showLoginForm("Deslogueado");
     }
 }
 

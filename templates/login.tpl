@@ -29,4 +29,8 @@
             <button id="btn-send">Enviar</button>
         </form>
     </div>
+    <div class="div-login">
+        <h3>Desloguearse</h3>
+        <button><a href="logout">Enviar</a></button>
+    </div>
 </div>

@@ -1,4 +1,4 @@
-<h1 class="title">Peleadores</h1>
+<h1 class="fighters-title">Peleadores</h1>
 <div class="filter">
     <form action="weightclass" method=POST>
         <select name= "input_weightclass">
