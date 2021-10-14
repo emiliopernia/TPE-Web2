@@ -23,8 +23,16 @@ class WeightclassModel{
     }
 
     function deleteWeightclass($id){
+        try {
             $query=$this->db->prepare("DELETE FROM weightclass WHERE weightClass_id=?");
-            $query->execute(array($id));        
+            $query->execute(array($id)); 
+        } catch (PDOException $e) {
+            if ($e->getCode() == '23000'){
+                return "error";
+            }
+        
+        }     
+                        
     }
 
     function editWeightclass($id,$weightclassName,$maxWeight,$minWeight){

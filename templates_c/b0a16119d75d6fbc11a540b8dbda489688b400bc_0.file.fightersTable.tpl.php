@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.39, created on 2021-10-14 13:17:40
+/* Smarty version 3.1.39, created on 2021-10-14 16:37:25
   from 'C:\xampp\htdocs\Web2\TpePernia\templates\fightersTable.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_616811d41116a4_07846457',
+  'unifunc' => 'content_616840a5228895_60119637',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'b0a16119d75d6fbc11a540b8dbda489688b400bc' => 
     array (
       0 => 'C:\\xampp\\htdocs\\Web2\\TpePernia\\templates\\fightersTable.tpl',
-      1 => 1634210212,
+      1 => 1634216370,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_616811d41116a4_07846457 (Smarty_Internal_Template $_smarty_tpl) {
+function content_616840a5228895_60119637 (Smarty_Internal_Template $_smarty_tpl) {
 ?><h1 class="fighters-title">Peleadores</h1>
 <div class="filter">
     <form action="showFightersByWeightclass" method=POST>
@@ -49,7 +49,6 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
         <th>Apodo</th>
         <th>Categoria</th>
         <th>Estadisticas</th>
-
     </thead>
     <tbody>
         <?php

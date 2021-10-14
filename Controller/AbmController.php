@@ -12,6 +12,7 @@ class AbmController{
     private $view;
     private $helper;
 
+
     function __construct(){
 
         $this->model= new FightersModel();
@@ -59,7 +60,8 @@ class AbmController{
 
     function deleteFighter($id){
         $this->model->deleteFighter($id);
-        header("Location:".BASE_URL."/abm");
+        header("Location:".BASE_URL."/abm");  
+        
     }
 
     function editFighterPage($id){
@@ -81,8 +83,12 @@ class AbmController{
     }
 
     function deleteWeightclass($id){
-        $this->weightClassModel->deleteWeightclass($id);
-        header("Location:".BASE_URL."/abm");
+            $msg=$this->weightClassModel->deleteWeightclass($id);
+            if ($msg=="error"){
+                header("Location:".BASE_URL."/home");
+            }else{
+                header("Location:".BASE_URL."/abm");
+            }
     }
 
     function editWeightclass($id,$weightclassName,$maxWeight,$minWeight){
