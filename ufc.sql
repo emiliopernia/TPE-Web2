@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 11-10-2021 a las 20:24:57
+-- Tiempo de generación: 14-10-2021 a las 15:16:52
 -- Versión del servidor: 10.4.11-MariaDB
 -- Versión de PHP: 7.4.1
 
@@ -65,7 +65,9 @@ INSERT INTO `fighter` (`id_fighter`, `name`, `nickname`, `nationality`, `age`, `
 (18, 'Jiri Prochazka\r\n', 'Denisa', 'Czech', 28, '28/3/1', 191, 93, 2, 2),
 (19, 'Aleksandar Rakic', 'Rocket', 'Austria', 29, '14/2', 196, 93, 2, 3),
 (26, 'Jon Jones', 'Bones', 'EEUU', 31, '18/0/1', 191, 212, 1, 3),
-(27, 'Emilio Pernia', 'Pipe', 'Arg', 37, '0/0/0', 170, 70, 1, 100);
+(32, 'Emilio Agustin Pernia', 'Pipe', 'arg', 37, '0', 170, 70, 1, 2254),
+(36, 'dasdasd', 'hgfhfg', 'fghf', 56, '56', 56, 56, 1, 56),
+(38, 'asd', 'asdasd', 'asd', 23, '23', 23, 23, 1, 23);
 
 -- --------------------------------------------------------
 
@@ -88,7 +90,9 @@ INSERT INTO `user` (`user_id`, `userName`, `email`, `password`) VALUES
 (1, 'Emilio Agustin Pernia', 'emilioapernia@gmail.com', '$2y$10$Jd1cSwCPNR9xAzVFvVxZ2O6usqAbPVtx.OuLWymV0LAtRnYzyp6u.'),
 (2, 'Guadalupe Jimena', 'oronaguadalupe84@outlook.com', '$2y$10$kP2sPBBxF9KUt7Ha7m5V8.2Axz5uSdIcreChKAT42pYHQ10oo0ohK'),
 (3, 'Julian Pernia', 'julianpernia_92@hotmail.com', '$2y$10$Jgzb9vERHTRowz2o9t9NSOWQpuoVhPfF3EQ2CCf3yaTHJ9UTDpDOa'),
-(4, 'Lola Pernia', 'lolapernia@gmail.com', '$2y$10$tVF6P5T6yZxYU.QIRpD3fOXlDOidLwiab3kPUz/uX/oN9BonVwlQi');
+(4, 'Lola Pernia', 'lolapernia@gmail.com', '$2y$10$tVF6P5T6yZxYU.QIRpD3fOXlDOidLwiab3kPUz/uX/oN9BonVwlQi'),
+(8, 'Olga Molian', 'mama@gmail.com', '$2y$10$AnfaGVCLRlWy5DMxMYALeO6bRft8YYDWb22GKOAHdPQypg9FP/ZRq'),
+(15, 'Emma Pernia', 'emmapernia@gmail.com', '$2y$10$N17nhl7lFK9o9GV2tivZceQSIDoxzOtWrTCOoh0qHg/I9nEKB.4j2');
 
 -- --------------------------------------------------------
 
@@ -116,7 +120,7 @@ INSERT INTO `weightclass` (`weightClass_id`, `weightClassName`, `maxWeight`, `mi
 (6, 'Featherweight', 65.7, 61.2),
 (7, 'Bantamweight', 61.1, 56.7),
 (8, 'Flyweight', 56.6, 52.2),
-(9, 'PruebaEdit2', 40, 38);
+(20, 'dsadasd', 0, 0);
 
 --
 -- Índices para tablas volcadas
@@ -149,19 +153,19 @@ ALTER TABLE `weightclass`
 -- AUTO_INCREMENT de la tabla `fighter`
 --
 ALTER TABLE `fighter`
-  MODIFY `id_fighter` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=32;
+  MODIFY `id_fighter` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=39;
 
 --
 -- AUTO_INCREMENT de la tabla `user`
 --
 ALTER TABLE `user`
-  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
 -- AUTO_INCREMENT de la tabla `weightclass`
 --
 ALTER TABLE `weightclass`
-  MODIFY `weightClass_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `weightClass_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 
 --
 -- Restricciones para tablas volcadas

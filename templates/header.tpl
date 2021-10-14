@@ -30,9 +30,7 @@
                 <li><a href="rankings">RANKINGS</a></li>
                 <li><a href="fighters">PELEADORES</a></li>
                 <li><a href="loginForm">REGISTRARSE</a></li>
-                {if !empty($_SESSION['email'])}
-                <li><a href="loginForm">REGISTRARSE</a></li>
-                {/if}
+                <li><a href="abm">ABM</a></li>
             </ul>
         </nav>
 </div>

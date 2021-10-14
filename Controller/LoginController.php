@@ -2,22 +2,30 @@
 
 require_once('./View/LoginView.php');
 require_once('./Model/UserModel.php');
+require_once('./Helpers/LoggedHelper.php');
 
 class LoginController{
 
     private $view;
     private $model;
+    private $helper;
     
     
 
     function __construct(){
         $this->view= new LoginView();
         $this->model= new UserModel();
+        $this->helper= new LoggedHelper();
+
     }
 
 
     function showLoginForm(){
-        $this->view->showLoginForm();
+        if ($this->helper->checkLogin()==true){
+            $this->view->showLoginForm("Logueado");
+        }else{
+            $this->view->showLoginForm("Inicie sesion para acceder a ABM");
+        }
     }
 
     function register(){
@@ -26,13 +34,13 @@ class LoginController{
             $userEmail=$_POST['email'];
             $userPassword= password_hash($_POST['password'], PASSWORD_BCRYPT);
             $this->model->newUser($userName,$userEmail,$userPassword);
-            $this->showLoginForm();
+            $this->view->showLoginForm("Registro exitoso");
         }
 
     }
 
     function loginForm(){
-        if(!empty($_POST['email'])&&!empty($_POST['password'])){
+            if(!empty($_POST['email'])&&!empty($_POST['password'])){
             $userEmail=$_POST['email'];
             $userPassword= $_POST['password'];
             $user= $this->model->getUser($userEmail);
@@ -40,12 +48,14 @@ class LoginController{
             if($user && password_verify($userPassword,$user->password)){
                 session_start();
                 $_SESSION['email']=$userEmail;
-                $this->view->showLoginForm($user->userName);
+                $this->view->showLoginForm("Logueado");
             }else{
-                $this->view->showLoginForm("No identificado");
+                $this->view->showLoginForm("Usuario no identificado");
             }     
+            }
         }
-    }
+        
+    
 
     function logout(){
         session_start();

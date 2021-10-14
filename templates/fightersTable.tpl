@@ -1,6 +1,6 @@
 <h1 class="fighters-title">Peleadores</h1>
 <div class="filter">
-    <form action="weightclass" method=POST>
+    <form action="showFightersByWeightclass" method=POST>
         <select name= "input_weightclass">
             {foreach from=$weightclasses item=weightclass}
                 <option value='{$weightclass->weightClass_id}'>{$weightclass->weightClassName}</option>
@@ -17,7 +17,6 @@
         <th>Apodo</th>
         <th>Categoria</th>
         <th>Estadisticas</th>
-
     </thead>
     <tbody>
         {foreach from=$fighters item=fighter}    

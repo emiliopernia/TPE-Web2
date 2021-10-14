@@ -1,13 +1,13 @@
 <h1 class="fighters-title">Peleadores</h1>
 <div class="filter">
-    <form action="weightclass" method=POST>
+    <form action="userWeightclass" method=POST>
         <select name= "input_weightclass">
             {foreach from=$weightclasses item=weightclass}
                 <option value='{$weightclass->weightClass_id}'>{$weightclass->weightClassName}</option>
             {/foreach}
         </select>
         <button type="submit"> Ver categoria seleccionada</button>
-        <button><a href='fighters'>Ver todos </a></button>
+        <button><a href='userFighters'>Ver todos </a></button>
     </form>
 </div>
 
@@ -28,7 +28,7 @@
             <td>{$fighter->nickname}</td>
             <td>{$fighter->weightClassName}</td>
             <td><a href="showFighter/{$fighter->id_fighter}"><img src="images/boton.png" alt="Ver mas"></a></td>
-            <td><a href="delete/{$fighter->id_fighter}"><img src="images/bin.png" alt="Borrar"></a></td>
+            <td><a href="deleteFighter/{$fighter->id_fighter}"><img src="images/bin.png" alt="Borrar"></a></td>
             <td><a href="editFighterPage/{$fighter->id_fighter}"><img src="images/edit.png" alt="Editar"></a></td>
         </tr> 
         {/foreach}    
@@ -57,7 +57,7 @@
             <label>Categoria</label>
             <select name= "weightclass">
                 {foreach from=$weightclasses item=weightclass}
-                    <option value='{$weightclass->weightClass_id}'>{$weightclass->weightClassName}</option>
+                        <option value='{$weightclass->weightClass_id}'>{$weightclass->weightClassName}</option>                     
                 {/foreach}
             </select>
             <label>Ranking</label>
@@ -73,9 +73,9 @@
             <label>Categoria</label>
             <input name="weightclass" type="text" placeholder="Categoria..." required>
             <label>Peso Maximo</label>
-            <input name="maxWeight" type="text" placeholder="Peso Maximo..." required>
+            <input name="maxWeight" type="number" placeholder="Peso Maximo..." required>
             <label>Peso Minimo</label>
-            <input name="minWeight" type="text" placeholder="Peso Minimo..." required>
+            <input name="minWeight" type="number" placeholder="Peso Minimo..." required>
             <button>ENVIAR</button>
         </form>
         <form action="editWeightclass" method=POST>
@@ -88,9 +88,9 @@
             <label>Categoria</label>
             <input name="weightclass" type="text" placeholder="Categoria..." required>
             <label>Peso Maximo</label>
-            <input name="maxWeight" type="text" placeholder="Peso Maximo..." required>
+            <input name="maxWeight" type="number" placeholder="Peso Maximo..." required>
             <label>Peso Minimo</label>
-            <input name="minWeight" type="text" placeholder="Peso Minimo..." required>
+            <input name="minWeight" type="number" placeholder="Peso Minimo..." required>
             <button>ENVIAR</button>
         </form>
         <form action="deleteWeightclass" method=POST>

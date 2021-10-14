@@ -26,6 +26,10 @@
     padding: 20px;
 }
 
+.state h3{
+    background-color: whitesmoke;
+}
+
 form, .div-login{
     display: flex;
     flex-direction: column;
@@ -48,6 +52,7 @@ form label{
 
 @media only screen and (min-width:700px) {
     .div-content-user{
+        min-height: 500px;
         background-repeat: no-repeat;
         background-size: auto;
         background-position: center;

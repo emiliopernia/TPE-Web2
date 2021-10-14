@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.39, created on 2021-10-04 00:31:01
+/* Smarty version 3.1.39, created on 2021-10-13 22:07:34
   from 'C:\xampp\htdocs\Web2\TpePernia\templates\bodyHome.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_615a2f25cde991_31587719',
+  'unifunc' => 'content_61673c8683b352_53649054',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '2b2596c90f56c18de07d968b0c7cb7dd24c31e95' => 
     array (
       0 => 'C:\\xampp\\htdocs\\Web2\\TpePernia\\templates\\bodyHome.tpl',
-      1 => 1633299079,
+      1 => 1634070789,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_615a2f25cde991_31587719 (Smarty_Internal_Template $_smarty_tpl) {
+function content_61673c8683b352_53649054 (Smarty_Internal_Template $_smarty_tpl) {
 ?><div class='home-wraper'>    
     <h1>Ultimate Fighting Championship</h1>
     <p>La Ultimate Fighting Championship (UFC) es la mayor empresa de artes marciales mixtas en el mundo, 

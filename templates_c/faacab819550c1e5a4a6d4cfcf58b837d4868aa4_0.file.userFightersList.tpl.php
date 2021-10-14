@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.39, created on 2021-10-11 19:40:12
+/* Smarty version 3.1.39, created on 2021-10-14 15:13:06
   from 'C:\xampp\htdocs\Web2\TpePernia\templates\userFightersList.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_616476fce87c23_04906394',
+  'unifunc' => 'content_61682ce289e789_94206636',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'faacab819550c1e5a4a6d4cfcf58b837d4868aa4' => 
     array (
       0 => 'C:\\xampp\\htdocs\\Web2\\TpePernia\\templates\\userFightersList.tpl',
-      1 => 1633973451,
+      1 => 1634217184,
       2 => 'file',
     ),
   ),
@@ -20,10 +20,10 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_616476fce87c23_04906394 (Smarty_Internal_Template $_smarty_tpl) {
+function content_61682ce289e789_94206636 (Smarty_Internal_Template $_smarty_tpl) {
 ?><h1 class="fighters-title">Peleadores</h1>
 <div class="filter">
-    <form action="weightclass" method=POST>
+    <form action="userWeightclass" method=POST>
         <select name= "input_weightclass">
             <?php
 $_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['weightclasses']->value, 'weightclass');
@@ -39,7 +39,7 @@ $_smarty_tpl->tpl_vars['weightclass']->do_else = false;
 $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
         </select>
         <button type="submit"> Ver categoria seleccionada</button>
-        <button><a href='fighters'>Ver todos </a></button>
+        <button><a href='userFighters'>Ver todos </a></button>
     </form>
 </div>
 
@@ -69,7 +69,7 @@ $_smarty_tpl->tpl_vars['fighter']->do_else = false;
 </td>
             <td><a href="showFighter/<?php echo $_smarty_tpl->tpl_vars['fighter']->value->id_fighter;?>
 "><img src="images/boton.png" alt="Ver mas"></a></td>
-            <td><a href="delete/<?php echo $_smarty_tpl->tpl_vars['fighter']->value->id_fighter;?>
+            <td><a href="deleteFighter/<?php echo $_smarty_tpl->tpl_vars['fighter']->value->id_fighter;?>
 "><img src="images/bin.png" alt="Borrar"></a></td>
             <td><a href="editFighterPage/<?php echo $_smarty_tpl->tpl_vars['fighter']->value->id_fighter;?>
 "><img src="images/edit.png" alt="Editar"></a></td>
@@ -107,9 +107,20 @@ $_smarty_tpl->tpl_vars['weightclass']->do_else = true;
 if ($_from !== null) foreach ($_from as $_smarty_tpl->tpl_vars['weightclass']->value) {
 $_smarty_tpl->tpl_vars['weightclass']->do_else = false;
 ?>
-                    <option value='<?php echo $_smarty_tpl->tpl_vars['weightclass']->value->weightClass_id;?>
+                    <?php
+$_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['fighters']->value, 'fighter');
+$_smarty_tpl->tpl_vars['fighter']->do_else = true;
+if ($_from !== null) foreach ($_from as $_smarty_tpl->tpl_vars['fighter']->value) {
+$_smarty_tpl->tpl_vars['fighter']->do_else = false;
+?>   
+                        <?php if (($_smarty_tpl->tpl_vars['fighter']->value->weightClass_id) != ($_smarty_tpl->tpl_vars['weightclass']->value->weightClass_id)) {?>
+                            <option value='<?php echo $_smarty_tpl->tpl_vars['weightclass']->value->weightClass_id;?>
 '><?php echo $_smarty_tpl->tpl_vars['weightclass']->value->weightClassName;?>
 </option>
+                        <?php }?>   
+                    <?php
+}
+$_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>                          
                 <?php
 }
 $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
