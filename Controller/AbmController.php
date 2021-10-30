@@ -40,9 +40,9 @@ class AbmController{
         }
     }
 
-    function showByCategory($weightclass){
+    function showByCategory(){
         $this->loadSelectWeightclass();   
-        $weightclassFighters = $this->model->getFightersByWeightclass($weightclass);
+        $weightclassFighters = $this->model->getFightersByWeightclass($_POST['input_weightclass']);
         if ($this->helper->checkLogin()==true){
             $this->view->showUserFightersView($weightclassFighters);
         }else{  
@@ -53,8 +53,12 @@ class AbmController{
 
     //funciones de abmfighter
 
-    function addFighter($name, $nickname,$nationality,$age,$record,$height,$weight,$weightclass_id,$rank){
-        $this->model->addFighter($name, $nickname,$nationality,$age,$record,$height,$weight,$weightclass_id,$rank);
+    function addFighter(){
+        if (!empty ($_POST)) {
+            $this->model->addFighter($_POST['name'], $_POST['nickname'],$_POST['nationality'],$_POST['age'],$_POST['record'],
+            $_POST['height'],$_POST['weight'],$_POST['weightclass'],$_POST['rank']);
+        }
+        
         header("Location:".BASE_URL."/abm");       
     }
 
@@ -70,29 +74,40 @@ class AbmController{
         $this->view->editFighter($fighter);  
     }
 
-    function editFighter($id,$name, $nickname,$nationality,$age,$record,$height,$weight,$weightclass_id,$rank){
-        $this->model->saveChanges($id,$name, $nickname,$nationality,$age,$record,$height,$weight,$weightclass_id,$rank);
+    function editFighter($id){
+        if (!empty ($_POST)){
+             $this->model->saveChanges($id,$_POST['name'], $_POST['nickname'],$_POST['nationality'],$_POST['age'],$_POST['record'],
+        $_POST['height'],$_POST['weight'],$_POST['weightclass'],$_POST['rank']);
+        }
+       
         header("Location:".BASE_URL."/abm");
     }
 
     //funciones de abmweightclass
 
-    function createNewWeightclass($weightclassName,$maxWeight,$minWeight){
-        $this->weightClassModel->createNewWeightclass($weightclassName,$maxWeight,$minWeight);
+    function createNewWeightclass(){
+        if (!empty ($_POST)){
+            $this->weightClassModel->createNewWeightclass($_POST['weightclass'], $_POST['maxWeight'], $_POST['minWeight']);
+        }
         header("Location:".BASE_URL."/abm");
     }
 
-    function deleteWeightclass($id){
-            $msg=$this->weightClassModel->deleteWeightclass($id);
+    function deleteWeightclass(){
+        if (!empty ($_POST)){
+            $msg=$this->weightClassModel->deleteWeightclass($_POST['weightclass']);
             if ($msg=="error"){
-                header("Location:".BASE_URL."/home");
+                header("Location:".BASE_URL."/abm");
             }else{
                 header("Location:".BASE_URL."/abm");
             }
+        }
+            
     }
 
-    function editWeightclass($id,$weightclassName,$maxWeight,$minWeight){
-        $this->weightClassModel->editWeightclass($id,$weightclassName,$maxWeight,$minWeight);
+    function editWeightclass(){
+        if (!empty ($_POST)){
+            $this->weightClassModel->editWeightclass($_POST['id'],$_POST['weightclass'],$_POST['maxWeight'],$_POST['minWeight']);
+        }
         header("Location:".BASE_URL."/abm");
     }
 }

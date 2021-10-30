@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.39, created on 2021-10-14 13:57:05
+/* Smarty version 3.1.39, created on 2021-10-15 21:01:09
   from 'C:\xampp\htdocs\Web2\TpePernia\templates\editFighterForm.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_61681b11595707_46485014',
+  'unifunc' => 'content_6169cff5aca8c0_97119048',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '1b2f625553257f2de3c71aea2d1516b891aea6e7' => 
     array (
       0 => 'C:\\xampp\\htdocs\\Web2\\TpePernia\\templates\\editFighterForm.tpl',
-      1 => 1634209641,
+      1 => 1634238598,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_61681b11595707_46485014 (Smarty_Internal_Template $_smarty_tpl) {
+function content_6169cff5aca8c0_97119048 (Smarty_Internal_Template $_smarty_tpl) {
 ?><div class="formEdit">
     <form action="editFighter/<?php echo $_smarty_tpl->tpl_vars['fighter']->value->id_fighter;?>
 " method=POST>

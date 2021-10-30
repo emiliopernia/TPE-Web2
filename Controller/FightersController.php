@@ -34,9 +34,12 @@ class FightersController{
         $this->view->showFighterView($fighter);
     }
 
-    function showByCategory($weightclass){
+    function showByCategory(){
         $this->loadSelectWeightclass();   
-        $weightclassFighters = $this->fightersModel->getFightersByWeightclass($weightclass);    
+        if (!empty ($_POST)) {
+            $weightclassFighters = $this->fightersModel->getFightersByWeightclass($_POST['input_weightclass']); 
+        }
+           
         $this->view->showFightersView($weightclassFighters); 
     }
 

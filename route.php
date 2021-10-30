@@ -36,7 +36,7 @@ switch ($params[0]) {
         $fightersController->showFighter($params[1]); 
         break;
     case 'showFightersByWeightclass': 
-        $fightersController->showByCategory($_POST['input_weightclass']);
+        $fightersController->showByCategory();
         break;
     case 'rankings':
         $rankingsController->showRankings();
@@ -45,8 +45,7 @@ switch ($params[0]) {
         $abmController->showFighters();
         break;
     case 'addFighter':
-        $abmController->addFighter($_POST['name'], $_POST['nickname'],$_POST['nationality'],$_POST['age'],$_POST['record'],
-        $_POST['height'],$_POST['weight'],$_POST['weightclass'],$_POST['rank']);
+        $abmController->addFighter();
         break;
     case 'deleteFighter':
         $abmController->deleteFighter($params[1]);
@@ -55,14 +54,13 @@ switch ($params[0]) {
         $abmController->editFighterPage($params[1]);
         break;
     case 'editFighter':
-        $abmController->editFighter($params[1],$_POST['name'], $_POST['nickname'],$_POST['nationality'],$_POST['age'],$_POST['record'],
-        $_POST['height'],$_POST['weight'],$_POST['weightclass'],$_POST['rank']);
+        $abmController->editFighter($params[1]);
         break;
     case 'userFighters': 
         $abmController->showFighters(); 
         break; 
     case 'userWeightclass': 
-        $abmController->showByCategory($_POST['input_weightclass']);
+        $abmController->showByCategory();
         break;
     case 'loginForm': 
         $loginController->showLoginForm();
@@ -77,13 +75,13 @@ switch ($params[0]) {
         $loginController->logout();
         break; 
     case 'createWeightclass':
-        $abmController->createNewWeightclass($_POST['weightclass'], $_POST['maxWeight'], $_POST['minWeight']);
+        $abmController->createNewWeightclass();
         break; 
     case 'deleteWeightclass':
-        $abmController->deleteWeightclass($_POST['weightclass']) ;
+        $abmController->deleteWeightclass() ;
         break;
     case 'editWeightclass':
-        $abmController->editWeightclass($_POST['id'],$_POST['weightclass'],$_POST['maxWeight'],$_POST['minWeight']);
+        $abmController->editWeightclass();
      
     default: 
         echo('404 Page not found'); 
