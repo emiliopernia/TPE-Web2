@@ -10,9 +10,9 @@ class WeightclassModel{
     }
 
     function getWeightclass(){
-        $sentencia = $this->db->prepare("SELECT * FROM weightclass");
-        $sentencia->execute();
-        $weightclasses= $sentencia->fetchAll(PDO::FETCH_OBJ);
+        $query = $this->db->prepare("SELECT * FROM weightclass");
+        $query->execute();
+        $weightclasses= $query->fetchAll(PDO::FETCH_OBJ);
         return $weightclasses;
     }
 

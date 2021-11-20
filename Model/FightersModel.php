@@ -12,44 +12,44 @@ class FightersModel{
 
     function getFighters(){
         
-        $sentencia = $this->db->prepare( "SELECT a.*, b.* FROM fighter a LEFT JOIN weightclass b ON a.weightClass_id=b.weightClass_id");
-        $sentencia->execute();
-        $fighters = $sentencia->fetchAll(PDO::FETCH_OBJ);
+        $query = $this->db->prepare( "SELECT a.*, b.* FROM fighter a LEFT JOIN weightclass b ON a.weightClass_id=b.weightClass_id");
+        $query->execute();
+        $fighters = $query->fetchAll(PDO::FETCH_OBJ);
         return $fighters;
     }
 
     function getFighter($id){
-        $sentencia = $this->db->prepare( "SELECT a.*, b.* FROM fighter a LEFT JOIN weightclass b ON a.weightClass_id=b.weightClass_id WHERE id_fighter=?");
-        $sentencia->execute(array($id));
-        $fighter = $sentencia->fetch(PDO::FETCH_OBJ);
+        $query = $this->db->prepare( "SELECT a.*, b.* FROM fighter a LEFT JOIN weightclass b ON a.weightClass_id=b.weightClass_id WHERE id_fighter=?");
+        $query->execute(array($id));
+        $fighter = $query->fetch(PDO::FETCH_OBJ);
         return $fighter;
     }
 
     function getFightersByWeightclass($weightclass){
-        $sentencia = $this->db->prepare( "SELECT a.*, b.* FROM fighter a LEFT JOIN weightclass b ON a.weightClass_id=b.weightClass_id 
+        $query = $this->db->prepare( "SELECT a.*, b.* FROM fighter a LEFT JOIN weightclass b ON a.weightClass_id=b.weightClass_id 
         WHERE a.weightClass_id=?");
-        $sentencia->execute(array($weightclass));
-        $fighters = $sentencia->fetchAll(PDO::FETCH_OBJ);
+        $query->execute(array($weightclass));
+        $fighters = $query->fetchAll(PDO::FETCH_OBJ);
         return $fighters;
     }
 
     function addFighter($name, $nickname,$nationality,$age,$record,$height,$weight,$weightclass_id,$rank){
-        $sentencia = $this->db->prepare("INSERT INTO fighter (name, nickname, nationality, age, record,
+        $query = $this->db->prepare("INSERT INTO fighter (name, nickname, nationality, age, record,
          height, weight, weightClass_id, weightClassRank) VALUES (?,?,?,?,?,?,?,?,?)");
-         $sentencia->execute(array($name, $nickname,$nationality,$age,$record,$height,$weight,$weightclass_id,$rank));
+         $query->execute(array($name, $nickname,$nationality,$age,$record,$height,$weight,$weightclass_id,$rank));
 
     }
 
     function deleteFighter($id){
-        $sentencia=$this->db->prepare("DELETE FROM fighter WHERE id_fighter=?");
-        $sentencia->execute(array($id));
+        $query=$this->db->prepare("DELETE FROM fighter WHERE id_fighter=?");
+        $query->execute(array($id));
 
     }
 
     function saveChanges($id,$name, $nickname,$nationality,$age,$record,$height,$weight,$weightclass_id,$rank){
-        $sentencia=$this->db->prepare("UPDATE fighter SET name='$name', nickname='$nickname', nationality='$nationality', age='$age',
+        $query=$this->db->prepare("UPDATE fighter SET name='$name', nickname='$nickname', nationality='$nationality', age='$age',
         record='$record',height='$height',weight='$weight',weightClass_id='$weightclass_id',weightClassRank='$rank' WHERE id_fighter=?");
-        $sentencia->execute(array($id));
+        $query->execute(array($id));
     }
     
 }

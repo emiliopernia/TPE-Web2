@@ -1,3 +1,5 @@
+{include file="header.tpl" }
+
 <div class= "weightclassWraper">
     
     {foreach from=$weightclasses item=weightclass}
@@ -21,3 +23,5 @@
     </div> 
     {/foreach}
 </div>
+
+{include file="footer.tpl" }

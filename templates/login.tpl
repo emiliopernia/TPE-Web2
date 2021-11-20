@@ -1,3 +1,5 @@
+{include file="header.tpl" }
+
 <div class="div-content-user">
     {if !empty($params)}
         <div class="state">
@@ -43,3 +45,5 @@
     {/if}
     
 </div>
+
+{include file="footer.tpl" }

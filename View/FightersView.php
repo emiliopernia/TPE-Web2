@@ -15,17 +15,13 @@ class FightersView{
     }
 
     function showFightersView($fighters){
-        $this->smarty->display('templates/header.tpl');
         $this->smarty->assign('fighters',$fighters);
         $this->smarty->display('templates/fightersTable.tpl');
-        $this->smarty->display('templates/footer.tpl');
     }
 
     function showFighterView($fighter){
-        $this->smarty->display('templates/header.tpl');
         $this->smarty->assign('fighter',$fighter);
         $this->smarty->display('templates/fighterInfoPage.tpl');
-        $this->smarty->display('templates/footer.tpl');
     }
 
 }

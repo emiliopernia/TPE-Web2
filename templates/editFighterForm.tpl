@@ -1,3 +1,5 @@
+{include file="header.tpl" }
+
 <div class="formEdit">
     <form action="editFighter/{$fighter->id_fighter}" method=POST>
         <h2>Agregar Peleadores</h2>
@@ -28,3 +30,5 @@
     </form>   
     
 </div>
+
+{include file="footer.tpl" }

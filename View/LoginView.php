@@ -11,10 +11,8 @@ class LoginView{
     }
 
     function showLoginForm($params=''){
-        $this->smarty->display('templates/header.tpl');
         $this->smarty->assign('params',$params);
         $this->smarty->display('templates/login.tpl');
-        $this->smarty->display('templates/footer.tpl');
     }
 
 }
