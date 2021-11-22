@@ -1,27 +1,32 @@
 <?php
-/* Smarty version 3.1.39, created on 2021-10-14 16:37:36
+/* Smarty version 3.1.39, created on 2021-11-21 16:25:13
   from 'C:\xampp\htdocs\Web2\TpePernia\templates\userFightersList.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_616840b0b29246_89334460',
+  'unifunc' => 'content_619a64d99e9245_92070997',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'faacab819550c1e5a4a6d4cfcf58b837d4868aa4' => 
     array (
       0 => 'C:\\xampp\\htdocs\\Web2\\TpePernia\\templates\\userFightersList.tpl',
-      1 => 1634217378,
+      1 => 1637406692,
       2 => 'file',
     ),
   ),
   'includes' => 
   array (
+    'file:header.tpl' => 1,
+    'file:footer.tpl' => 1,
   ),
 ),false)) {
-function content_616840b0b29246_89334460 (Smarty_Internal_Template $_smarty_tpl) {
-?><h1 class="fighters-title">Peleadores</h1>
+function content_619a64d99e9245_92070997 (Smarty_Internal_Template $_smarty_tpl) {
+$_smarty_tpl->_subTemplateRender("file:header.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
+?>
+
+<h1 class="fighters-title">Peleadores</h1>
 <div class="filter">
     <form action="userWeightclass" method=POST>
         <select name= "input_weightclass">
@@ -176,5 +181,7 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
         </form>
     </div>
 </div>
-<?php }
+
+<?php $_smarty_tpl->_subTemplateRender("file:footer.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
+}
 }

@@ -11,16 +11,15 @@ class ApiFightersController{
     function __construct(){
         $this->view= new ApiView();
         $this->model= new CommentsModel();
-        $this->data = file_get_contents("php://input");
+        $this->data = file_get_contents("php://input");//para obtener el body del request
 
     }
 
     private function getData(){
-        return json_decode($this->data);
+        return json_decode($this->data);//de string a json
     }
 
     function addComment(){
-        // FALTAN CONTROLES DE LOGUEO
 
         $data = $this->getData();
 
@@ -38,7 +37,8 @@ class ApiFightersController{
         }
     }
 
-    function getFighterComments(){
+    function getAllFightersComments(){
+        
         $comments = $this->model->getAllComments();
 
         if ($comments) {
@@ -47,4 +47,41 @@ class ApiFightersController{
             $this->view->response("No se pueden obtener comentarios", 404);
         }
     }
+
+    function getFighterComments($params = null)
+    {
+        $id = $params[':ID'];
+        $comment = $this->model->getFighterComments($id);
+
+        if ($comment) {
+            $this->view->response($comment, 200);
+        } else {
+            $this->view->response("No se encontraron comentarios para este peleador", 404);
+        }
+    }
+    function getParticularComment($params = null)
+    {
+        $id = $params[':ID'];
+        $comment = $this->model->getParticularComment($id);
+
+        if ($comment) {
+            $this->view->response($comment, 200);
+        } else {
+            $this->view->response("No existe el comentario con el id={$id}", 404);
+        }
+    }
+
+    function deleteComment($params=null){
+        // faltan controles de logueo
+        $id = $params[':ID'];
+        $comment= $this->model->getParticularComment($id);
+        if($comment){
+            $this->model->deleteComment($id);
+            $this->view->response("Borrado exitosamente el comentario con el id={$id}", 200);
+        }else{
+            $this->view->response("No existe el comentario con el id={$id}", 404);
+        }
+    }
+
+  
 }

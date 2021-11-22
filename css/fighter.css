@@ -1,3 +1,7 @@
+.hide{
+    display: none;
+}
+
 .fighterWraper{
     display: flex;
     flex-direction: column;

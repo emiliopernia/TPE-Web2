@@ -12,6 +12,8 @@
     <link rel="stylesheet" href="css/home.css">
     <link rel="stylesheet" href="css/login.css">
     <link rel="stylesheet" href="css/weightclass.css">
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+
 
     <title>UFC All Access</title>
 </head>

@@ -1,27 +1,31 @@
 <?php
-/* Smarty version 3.1.39, created on 2021-10-13 22:07:34
+/* Smarty version 3.1.39, created on 2021-11-21 16:22:56
   from 'C:\xampp\htdocs\Web2\TpePernia\templates\bodyHome.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_61673c8683b352_53649054',
+  'unifunc' => 'content_619a6450337656_56985585',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '2b2596c90f56c18de07d968b0c7cb7dd24c31e95' => 
     array (
       0 => 'C:\\xampp\\htdocs\\Web2\\TpePernia\\templates\\bodyHome.tpl',
-      1 => 1634070789,
+      1 => 1637508093,
       2 => 'file',
     ),
   ),
   'includes' => 
   array (
+    'file:header.tpl' => 1,
+    'file:footer.tpl' => 1,
   ),
 ),false)) {
-function content_61673c8683b352_53649054 (Smarty_Internal_Template $_smarty_tpl) {
-?><div class='home-wraper'>    
+function content_619a6450337656_56985585 (Smarty_Internal_Template $_smarty_tpl) {
+$_smarty_tpl->_subTemplateRender("file:header.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
+?>
+<div class='home-wraper'>    
     <h1>Ultimate Fighting Championship</h1>
     <p>La Ultimate Fighting Championship (UFC) es la mayor empresa de artes marciales mixtas en el mundo, 
     que alberga la mayor parte de los mejores peleadores del ranking en el deporte y produce eventos por todo el mundo.
@@ -70,6 +74,8 @@ function content_61673c8683b352_53649054 (Smarty_Internal_Template $_smarty_tpl)
             de un peleador.</li>
     </ul>
 </div>
+<?php $_smarty_tpl->_subTemplateRender("file:footer.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
+?>
 
 
 <?php }

@@ -15,23 +15,42 @@
             <li>Peso (kg): {$fighter->weight}</li>
         </ul>
     </div>
-    <form>
-        <div id="commentsWrapper">
-            <div>
-                <textarea id="commentIput" rows="5" cols="110" placeholder="Escribir comentario (max 400 caracteres)"> </textarea>
-            </div>
-            <label for="score">Puntaje</label>
-            <select id="scoreInput">
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
-                <option value="4">4</option>
-                <option value="5">5</option>
-            </select>
-            <input id="idFighterInput" type="hidden" value="{$fighter->id_fighter}">
-            <button id="addComment">Agregar</button>
+        <div id="commentFormWrapper" data-user="{$user["user"]}"{if $user["user"]==null}class="hide"{/if}>
+            <form id="API_comment">
+        
+                    <div>
+                        <textarea name="commentIput" rows="5" cols="110" placeholder="Escribir comentario (max 400 caracteres)"></textarea>
+                    </div>
+                    <label for="score">Puntaje</label>
+                    <select name="score">
+                        <option value="0">seleccionar</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                    </select>
+                    <input id="idFighterInput" type="hidden" name="id_fighter" value="{$fighter->id_fighter}">
+                    <input id="idUserInput" type="hidden" name="id" value="{$user["id"]}">
+                    <input type="submit" value="Enviar" id="btn-addComment">
+    
+            </form>
         </div>
-    </form>
+    
+    <div id= "comments" class="listOfCommentsWrapper">
+        <table>
+            <thead>
+                <th>Comentario</th>
+                <th>Puntaje</th>
+            </thead>
+
+            <tbody class="commentsBody">
+                    {include file="vue/commentsList.tpl" }
+            </tbody>
+        </table>
+        <button><a href='fighters'><img src="images/botonBack.png" alt="Volver"></a></button>
+    </div>
 </div>
 
+<script src= "./js/comments.js"></script> 
 {include file="footer.tpl" }

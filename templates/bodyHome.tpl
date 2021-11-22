@@ -1,3 +1,4 @@
+{include file="header.tpl" }
 <div class='home-wraper'>    
     <h1>Ultimate Fighting Championship</h1>
     <p>La Ultimate Fighting Championship (UFC) es la mayor empresa de artes marciales mixtas en el mundo, 
@@ -47,5 +48,6 @@
             de un peleador.</li>
     </ul>
 </div>
+{include file="footer.tpl" }
 
 

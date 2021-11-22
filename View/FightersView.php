@@ -19,7 +19,9 @@ class FightersView{
         $this->smarty->display('templates/fightersTable.tpl');
     }
 
-    function showFighterView($fighter){
+    function showFighterView($fighter,$user){
+        var_dump($user);
+        $this->smarty->assign('user',$user);
         $this->smarty->assign('fighter',$fighter);
         $this->smarty->display('templates/fighterInfoPage.tpl');
     }

@@ -11,9 +11,7 @@ class HomeView{
       $this->smarty= new Smarty();
     }
 
-    function showHomeView(){
-        $this->smarty->display('templates/header.tpl');
+    function showHomeView(){ 
         $this->smarty->display('templates/bodyHome.tpl');
-        $this->smarty->display('templates/footer.tpl');
     }
 }

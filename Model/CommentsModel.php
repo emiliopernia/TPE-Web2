@@ -26,6 +26,26 @@ class CommentsModel{
         return $query->fetchAll(PDO::FETCH_OBJ);
     }
 
+    function getFighterComments($id)
+    {
+        $query = $this->db->prepare('SELECT * FROM comment INNER JOIN user ON comment.user_id = user.user_id WHERE id_fighter=?');
+        $query->execute(array($id));
+
+        return $query->fetchAll(PDO::FETCH_OBJ);
+    }
+
+    function getParticularComment($id){
+        $query = $this->db->prepare('SELECT * FROM comment  WHERE id_comment=?');
+        $query->execute(array($id));
+
+        return $query->fetch(PDO::FETCH_OBJ);
+    }
+
+    function deleteComment($id){
+        $query = $this->db->prepare('DELETE FROM comment WHERE id_comment=?');
+        $query->execute(array($id));
+    }
+
 
         
 }

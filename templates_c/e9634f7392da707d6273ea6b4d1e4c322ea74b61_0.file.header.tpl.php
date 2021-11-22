@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.39, created on 2021-10-13 22:07:51
+/* Smarty version 3.1.39, created on 2021-11-22 15:46:02
   from 'C:\xampp\htdocs\Web2\TpePernia\templates\header.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_61673c97910ea4_55654172',
+  'unifunc' => 'content_619bad2aa86407_63188151',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'e9634f7392da707d6273ea6b4d1e4c322ea74b61' => 
     array (
       0 => 'C:\\xampp\\htdocs\\Web2\\TpePernia\\templates\\header.tpl',
-      1 => 1634155668,
+      1 => 1637592360,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_61673c97910ea4_55654172 (Smarty_Internal_Template $_smarty_tpl) {
+function content_619bad2aa86407_63188151 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <html lang="en">
 <head>
@@ -36,6 +36,10 @@ function content_61673c97910ea4_55654172 (Smarty_Internal_Template $_smarty_tpl)
     <link rel="stylesheet" href="css/home.css">
     <link rel="stylesheet" href="css/login.css">
     <link rel="stylesheet" href="css/weightclass.css">
+    <?php echo '<script'; ?>
+ src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"><?php echo '</script'; ?>
+>
+
 
     <title>UFC All Access</title>
 </head>

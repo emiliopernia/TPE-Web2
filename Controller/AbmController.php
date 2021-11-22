@@ -59,12 +59,12 @@ class AbmController{
             $_POST['height'],$_POST['weight'],$_POST['weightclass'],$_POST['rank']);
         }
         
-        header("Location:".BASE_URL."/abm");       
+        $this->redirectUrl();     
     }
 
     function deleteFighter($id){
         $this->model->deleteFighter($id);
-        header("Location:".BASE_URL."/abm");  
+        $this->redirectUrl();  
         
     }
 
@@ -80,7 +80,7 @@ class AbmController{
         $_POST['height'],$_POST['weight'],$_POST['weightclass'],$_POST['rank']);
         }
        
-        header("Location:".BASE_URL."/abm");
+        $this->redirectUrl(); 
     }
 
     //funciones de abmweightclass
@@ -89,16 +89,16 @@ class AbmController{
         if (!empty ($_POST)){
             $this->weightClassModel->createNewWeightclass($_POST['weightclass'], $_POST['maxWeight'], $_POST['minWeight']);
         }
-        header("Location:".BASE_URL."/abm");
+        $this->redirectUrl(); 
     }
 
     function deleteWeightclass(){
         if (!empty ($_POST)){
             $msg=$this->weightClassModel->deleteWeightclass($_POST['weightclass']);
             if ($msg=="error"){
-                header("Location:".BASE_URL."/abm");
+                $this->redirectUrl(); 
             }else{
-                header("Location:".BASE_URL."/abm");
+                $this->redirectUrl(); 
             }
         }
             
@@ -108,6 +108,6 @@ class AbmController{
         if (!empty ($_POST)){
             $this->weightClassModel->editWeightclass($_POST['id'],$_POST['weightclass'],$_POST['maxWeight'],$_POST['minWeight']);
         }
-        header("Location:".BASE_URL."/abm");
+        $this->redirectUrl(); 
     }
 }

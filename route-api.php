@@ -14,10 +14,11 @@ $method = $_SERVER["REQUEST_METHOD"];
 $r = new Router();
 
 // arma la tabla de ruteo
-$r->addRoute('comments', 'GET', 'ApiFightersController', 'getFighterComments');
-//$r->addRoute('comments/:ID', 'GET', 'ApiFightersController', 'getFighter');
+$r->addRoute('comments', 'GET', 'ApiFightersController', 'getAllFightersComments');
+$r->addRoute('comments/:ID', 'GET', 'ApiFightersController', 'getFighterComments');
 $r->addRoute('comments', 'POST', 'ApiFightersController', 'addComment');
-//$r->addRoute('comments/:ID', 'DELETE', 'ApiFightersController', 'deleteFighter');
+$r->addRoute('comment/:ID', 'GET', 'ApiFightersController','getParticularComment');
+$r->addRoute('comments/:ID', 'DELETE', 'ApiFightersController', 'deleteComment');
 //$r->addRoute('comments/:ID', 'PUT', 'ApiFightersController', 'editFighter');
 
 
