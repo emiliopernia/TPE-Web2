@@ -37,6 +37,7 @@ class ApiFightersController{
         }
     }
 
+    /*Aun no lo uso
     function getAllFightersComments(){
         
         $comments = $this->model->getAllComments();
@@ -46,10 +47,9 @@ class ApiFightersController{
         } else {
             $this->view->response("No se pueden obtener comentarios", 404);
         }
-    }
+    }*/
 
-    function getFighterComments($params = null)
-    {
+    function getFighterComments($params = null){
         $id = $params[':ID'];
         $comment = $this->model->getFighterComments($id);
 
@@ -59,8 +59,9 @@ class ApiFightersController{
             $this->view->response("No se encontraron comentarios para este peleador", 404);
         }
     }
-    function getParticularComment($params = null)
-    {
+    
+    /*Aun sin uso
+    function getParticularComment($params = null){
         $id = $params[':ID'];
         $comment = $this->model->getParticularComment($id);
 
@@ -69,7 +70,7 @@ class ApiFightersController{
         } else {
             $this->view->response("No existe el comentario con el id={$id}", 404);
         }
-    }
+    }*/
 
     function deleteComment($params=null){
         // faltan controles de logueo

@@ -59,7 +59,7 @@ class LoginController{
 
     function logout(){
         $this->helper->logout();
-        $this->view->showLoginForm("Deslogueado");
+        header("Location:".BASE_URL."/home");
     }
 }
 

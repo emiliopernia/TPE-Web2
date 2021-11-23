@@ -23,6 +23,13 @@
             <div>
                 <h1>UFC</h1>
                 <h2>All Access</h2>
+                {if isset($smarty.session.email)}
+                <p>Usuario Logueado: {$smarty.session.userName}</p>
+                
+                {else}
+                <p>Registrese</p>
+                {/if}
+
             </div>
             <button id="btn-scroll-menu">MENU</button>
         </header>
@@ -32,7 +39,12 @@
                 <li><a href="rankings">RANKINGS</a></li>
                 <li><a href="fighters">PELEADORES</a></li>
                 <li><a href="loginForm">REGISTRARSE</a></li>
+                {if isset($smarty.session.email)}
                 <li><a href="abm">ABM</a></li>
+                {/if}
+                {if ({$smarty.session.addmin})=="1"}
+                <li><a href="users">USUARIOS</a></li>
+                {/if}
             </ul>
         </nav>
 </div>

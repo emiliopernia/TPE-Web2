@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.39, created on 2021-11-21 16:22:56
+/* Smarty version 3.1.39, created on 2021-11-23 10:27:39
   from 'C:\xampp\htdocs\Web2\TpePernia\templates\bodyHome.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_619a6450337656_56985585',
+  'unifunc' => 'content_619cb40b12dce9_24529725',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '2b2596c90f56c18de07d968b0c7cb7dd24c31e95' => 
     array (
       0 => 'C:\\xampp\\htdocs\\Web2\\TpePernia\\templates\\bodyHome.tpl',
-      1 => 1637508093,
+      1 => 1637659655,
       2 => 'file',
     ),
   ),
@@ -22,7 +22,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:footer.tpl' => 1,
   ),
 ),false)) {
-function content_619a6450337656_56985585 (Smarty_Internal_Template $_smarty_tpl) {
+function content_619cb40b12dce9_24529725 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender("file:header.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
 <div class='home-wraper'>    

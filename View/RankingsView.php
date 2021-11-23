@@ -12,6 +12,7 @@ class RankingsView{
     }
 
     function showRankings($fighters,$weightclasses){
+        session_start();
         $this->smarty->assign('fighters',$fighters);
         $this->smarty->assign('weightclasses',$weightclasses);        
         $this->smarty->display('templates/rankings.tpl');

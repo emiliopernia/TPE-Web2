@@ -12,6 +12,7 @@ class HomeView{
     }
 
     function showHomeView(){ 
+        session_start();
         $this->smarty->display('templates/bodyHome.tpl');
     }
 }

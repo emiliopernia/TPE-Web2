@@ -18,6 +18,13 @@ class LoggedHelper{
         $_SESSION['ID'] = $user->user_id;
         $_SESSION['userName'] = $user->userName;
         $_SESSION['addmin'] = $user->admin;
+        /*if ($_SESSION['addmin']===0){
+            $_SESSION['addmin']="user";
+        }else if ($_SESSION['addmin']===1){
+            $_SESSION['addmin']="addmin";
+        }else{
+            $_SESSION['addmin']=null;
+        }*/
         $_SESSION['email'] = $user->email;
     }
 

@@ -80,6 +80,7 @@
             <input name="minWeight" type="number" placeholder="Peso Minimo..." required>
             <button>ENVIAR</button>
         </form>
+        
         <form action="editWeightclass" method=POST>
             <h2>Editar Categoria</h2>
             <select name= "id">
@@ -95,6 +96,7 @@
             <input name="minWeight" type="number" placeholder="Peso Minimo..." required>
             <button>ENVIAR</button>
         </form>
+        
         <form action="deleteWeightclass" method=POST>
             <h2>Borrar Categoria</h2>
             <select name= "weightclass">

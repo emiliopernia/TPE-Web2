@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.39, created on 2021-11-22 15:46:02
+/* Smarty version 3.1.39, created on 2021-11-23 10:46:09
   from 'C:\xampp\htdocs\Web2\TpePernia\templates\header.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_619bad2aa86407_63188151',
+  'unifunc' => 'content_619cb861a3a096_24467511',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'e9634f7392da707d6273ea6b4d1e4c322ea74b61' => 
     array (
       0 => 'C:\\xampp\\htdocs\\Web2\\TpePernia\\templates\\header.tpl',
-      1 => 1637592360,
+      1 => 1637660768,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_619bad2aa86407_63188151 (Smarty_Internal_Template $_smarty_tpl) {
+function content_619cb861a3a096_24467511 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <html lang="en">
 <head>
@@ -49,6 +49,14 @@ function content_619bad2aa86407_63188151 (Smarty_Internal_Template $_smarty_tpl)
             <div>
                 <h1>UFC</h1>
                 <h2>All Access</h2>
+                <?php if ((isset($_SESSION['email']))) {?>
+                <p>Usuario Logueado: <?php echo $_SESSION['userName'];?>
+</p>
+                
+                <?php } else { ?>
+                <p>Registrese</p>
+                <?php }?>
+
             </div>
             <button id="btn-scroll-menu">MENU</button>
         </header>
@@ -58,7 +66,15 @@ function content_619bad2aa86407_63188151 (Smarty_Internal_Template $_smarty_tpl)
                 <li><a href="rankings">RANKINGS</a></li>
                 <li><a href="fighters">PELEADORES</a></li>
                 <li><a href="loginForm">REGISTRARSE</a></li>
+                <?php if ((isset($_SESSION['email']))) {?>
                 <li><a href="abm">ABM</a></li>
+                <?php }?>
+                <?php ob_start();
+echo $_SESSION['addmin'];
+$_prefixVariable1 = ob_get_clean();
+if (($_prefixVariable1) == "1") {?>
+                <li><a href="users">USUARIOS</a></li>
+                <?php }?>
             </ul>
         </nav>
 </div>

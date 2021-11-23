@@ -14,12 +14,12 @@ $method = $_SERVER["REQUEST_METHOD"];
 $r = new Router();
 
 // arma la tabla de ruteo
-$r->addRoute('comments', 'GET', 'ApiFightersController', 'getAllFightersComments');
+//$r->addRoute('comments', 'GET', 'ApiFightersController', 'getAllFightersComments');
 $r->addRoute('comments/:ID', 'GET', 'ApiFightersController', 'getFighterComments');
 $r->addRoute('comments', 'POST', 'ApiFightersController', 'addComment');
-$r->addRoute('comment/:ID', 'GET', 'ApiFightersController','getParticularComment');
+//$r->addRoute('comments/:ID', 'GET', 'ApiFightersController','getParticularComment');esto como se resolveria? (con una variable para modificar el endpoint a comment, por ejemplo?)
 $r->addRoute('comments/:ID', 'DELETE', 'ApiFightersController', 'deleteComment');
-//$r->addRoute('comments/:ID', 'PUT', 'ApiFightersController', 'editFighter');
+//$r->addRoute('comments/:ID', 'PUT', 'ApiFightersController', 'editComment');
 
 
 // rutea
