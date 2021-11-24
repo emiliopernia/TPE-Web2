@@ -1,16 +1,19 @@
 <?php
 require_once("api/ApiView.php");
 require_once('./Model/CommentsModel.php');
+require_once('./Helpers/LoggedHelper.php');
 
 class ApiCommentsController{
 
     private $view;
     private $model;
     private $data;
+    private $helper;
 
     function __construct(){
         $this->view= new ApiView();
         $this->model= new CommentsModel();
+        $this->helper= new LoggedHelper();
         $this->data = file_get_contents("php://input");//para obtener el body del request
 
     }
@@ -20,21 +23,22 @@ class ApiCommentsController{
     }
 
     function addComment(){
+        if ($this->helper->checkLogin()==true){
+            $data = $this->getData();
 
-        $data = $this->getData();
+            $comment = $data->comment;
+            $score = $data->score;
+            $user_id = $data->user_id;
+            $id_fighter = $data->id_fighter;
 
-        $comment = $data->comment;
-        $score = $data->score;
-        $user_id = $data->user_id;
-        $id_fighter = $data->id_fighter;
+            $added = $this->model->addComment($comment, $score, $user_id, $id_fighter);
 
-        $added = $this->model->addComment($comment, $score, $user_id, $id_fighter);
-
-        if ($added) {
-            $this->view->response("Se agrego el comentario con id: {$added}", 200);
-        } else {
-            $this->view->response("El comentario no fue creado", 500);
-        }
+            if ($added) {
+                $this->view->response("Se agrego el comentario con id: {$added}", 200);
+            } else {
+                $this->view->response("El comentario no fue creado", 500);
+            }
+        }   
     }
 
     /*Aun no lo uso
@@ -73,15 +77,19 @@ class ApiCommentsController{
     }*/
 
     function deleteComment($params=null){
-        // faltan controles de logueo
-        $id = $params[':ID'];
-        $comment= $this->model->getParticularComment($id);
-        if($comment){
-            $this->model->deleteComment($id);
-            $this->view->response("Borrado exitosamente el comentario con el id={$id}", 200);
-        }else{
+        if($this->helper->isAdmin()){
+            $id = $params[':ID'];
+            $comment= $this->model->getParticularComment($id);
+            if($comment){
+                $this->model->deleteComment($id);
+                $this->view->response("Borrado exitosamente el comentario con el id={$id}", 200);
+            }else{
             $this->view->response("No existe el comentario con el id={$id}", 404);
+            }
+        }else{
+            $this->view->response("Sin autorizacion", 401);
         }
+        
     }
 
   

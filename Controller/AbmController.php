@@ -155,8 +155,7 @@ class AbmController{
     //funciones para el manejo de usuarios
 
     function showUsers(){
-        $user=$this->helper->checkAutorization();
-        if($user['user']=="admin"){
+        if($this->helper->isAdmin()){
             $users=$this->userModel->getUsers();
             $this->usersView->showUsers($users);
         }else{
@@ -167,9 +166,8 @@ class AbmController{
 
 
     function changeUserRol($email){
-        $user=$this->helper->checkAutorization();
-        if($user['user']=="admin"){
-            $user=$this->userModel->changeUserRol($email);
+        if($this->helper->isAdmin()){
+            $this->userModel->changeUserRol($email);
             header("Location:".BASE_URL."/showEditUsers");
         }else{
             header("Location:".BASE_URL."/loginForm");
@@ -177,9 +175,8 @@ class AbmController{
     }
 
     function deleteUser($id){
-        $user=$this->helper->checkAutorization();
-        if($user['user']=="admin"){
-            $user=$this->userModel->deleteUser($id);
+        if($this->helper->isAdmin()){
+            $this->userModel->deleteUser($id);
             header("Location:".BASE_URL."/showEditUsers");
         }else{
             header("Location:".BASE_URL."/loginForm");

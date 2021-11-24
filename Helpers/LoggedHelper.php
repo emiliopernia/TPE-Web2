@@ -49,4 +49,14 @@ class LoggedHelper{
             return $user;
         }
     }
+
+    function isAdmin(){
+        session_start();
+        $user=$this->checkAutorization();
+        if($user['user']=="admin"){
+            return true;
+        }else{
+            return false;
+        }
+    }
 }
