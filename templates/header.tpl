@@ -24,12 +24,10 @@
                 <h1>UFC</h1>
                 <h2>All Access</h2>
                 {if isset($smarty.session.email)}
-                <p>Usuario Logueado: {$smarty.session.userName}</p>
-                
-                {*{else}
-                <p>Registrese</p>*}
+                    <p>Hola: {$smarty.session.userName}</p>
+                {else}
+                    <p><a href="loginForm">Login</a></p>
                 {/if}
-
             </div>
             <button id="btn-scroll-menu">MENU</button>
         </header>
