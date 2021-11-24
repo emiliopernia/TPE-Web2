@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 14-10-2021 a las 15:16:52
+-- Tiempo de generación: 23-11-2021 a las 20:35:48
 -- Versión del servidor: 10.4.11-MariaDB
 -- Versión de PHP: 7.4.1
 
@@ -21,6 +21,34 @@ SET time_zone = "+00:00";
 --
 -- Base de datos: `ufc`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `comment`
+--
+
+CREATE TABLE `comment` (
+  `id_comment` int(11) NOT NULL,
+  `comment` varchar(400) NOT NULL,
+  `score` int(1) NOT NULL,
+  `user_id` int(11) NOT NULL,
+  `id_fighter` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Volcado de datos para la tabla `comment`
+--
+
+INSERT INTO `comment` (`id_comment`, `comment`, `score`, `user_id`, `id_fighter`) VALUES
+(2, 'prueba', 3, 1, 2),
+(3, 'ex campeon, gran peleador.', 4, 1, 2),
+(17, 'Peleador de buen stricking (gran poder). Incompleto en el suelo.', 4, 1, 2),
+(18, 'Es un campeon inmerecido. Buena tecnica', 3, 1, 3),
+(21, 'The Last Stykebender!!! completo por donde lo mires!', 5, 1, 5),
+(25, 'Posiblemente el mejor boxeador del UFC', 5, 21, 4),
+(27, 'dasdasdasda', 3, 1, 5),
+(28, 'Esta posponiendo peleas para conservar un titulo mal ganado', 2, 2, 3);
 
 -- --------------------------------------------------------
 
@@ -67,7 +95,14 @@ INSERT INTO `fighter` (`id_fighter`, `name`, `nickname`, `nationality`, `age`, `
 (26, 'Jon Jones', 'Bones', 'EEUU', 31, '18/0/1', 191, 212, 1, 3),
 (32, 'Emilio Agustin Pernia', 'Pipe', 'arg', 37, '0', 170, 70, 1, 2254),
 (36, 'dasdasd', 'hgfhfg', 'fghf', 56, '56', 56, 56, 1, 56),
-(38, 'asd', 'asdasd', 'asd', 23, '23', 23, 23, 1, 23);
+(40, 'Jhon', 'Supergole', 'Arg', 29, '1', 190, 98, 1, 1),
+(41, 'PruebaEdit2', 'Prueba1', 'Test', 40, '28/8', 188, 93, 2, 1),
+(43, 'Prueba3', 'Prueba3', 'Test', 50, '2/8', 188, 93, 2, 1),
+(44, 'Prueba4ed', 'Prueba4', 'Test', 60, '2/8', 188, 93, 2, 1),
+(46, 'Prueba4', 'Prueba4', 'Test', 60, '2/8', 188, 93, 2, 1),
+(47, 'Jhon', 'Sllkgg', 'Arg', 29, '1', 190, 98, 1, 1),
+(55, 'Jhonsinsky', 'Sllkgg', 'Arg', 29, '1', 190, 98, 1, 1),
+(58, 'Prueba5', 'Prueba5', 'Test', 60, '2/8', 188, 93, 2, 1);
 
 -- --------------------------------------------------------
 
@@ -77,6 +112,7 @@ INSERT INTO `fighter` (`id_fighter`, `name`, `nickname`, `nationality`, `age`, `
 
 CREATE TABLE `user` (
   `user_id` int(11) NOT NULL,
+  `admin` tinyint(1) NOT NULL,
   `userName` varchar(50) NOT NULL,
   `email` varchar(40) NOT NULL,
   `password` varchar(100) NOT NULL
@@ -86,13 +122,19 @@ CREATE TABLE `user` (
 -- Volcado de datos para la tabla `user`
 --
 
-INSERT INTO `user` (`user_id`, `userName`, `email`, `password`) VALUES
-(1, 'Emilio Agustin Pernia', 'emilioapernia@gmail.com', '$2y$10$Jd1cSwCPNR9xAzVFvVxZ2O6usqAbPVtx.OuLWymV0LAtRnYzyp6u.'),
-(2, 'Guadalupe Jimena', 'oronaguadalupe84@outlook.com', '$2y$10$kP2sPBBxF9KUt7Ha7m5V8.2Axz5uSdIcreChKAT42pYHQ10oo0ohK'),
-(3, 'Julian Pernia', 'julianpernia_92@hotmail.com', '$2y$10$Jgzb9vERHTRowz2o9t9NSOWQpuoVhPfF3EQ2CCf3yaTHJ9UTDpDOa'),
-(4, 'Lola Pernia', 'lolapernia@gmail.com', '$2y$10$tVF6P5T6yZxYU.QIRpD3fOXlDOidLwiab3kPUz/uX/oN9BonVwlQi'),
-(8, 'Olga Molian', 'mama@gmail.com', '$2y$10$AnfaGVCLRlWy5DMxMYALeO6bRft8YYDWb22GKOAHdPQypg9FP/ZRq'),
-(15, 'Emma Pernia', 'emmapernia@gmail.com', '$2y$10$N17nhl7lFK9o9GV2tivZceQSIDoxzOtWrTCOoh0qHg/I9nEKB.4j2');
+INSERT INTO `user` (`user_id`, `admin`, `userName`, `email`, `password`) VALUES
+(1, 1, 'Emilio Agustin Pernia', 'emilioapernia@gmail.com', '$2y$10$Jd1cSwCPNR9xAzVFvVxZ2O6usqAbPVtx.OuLWymV0LAtRnYzyp6u.'),
+(2, 0, 'Guadalupe Jimena', 'oronaguadalupe84@outlook.com', '$2y$10$kP2sPBBxF9KUt7Ha7m5V8.2Axz5uSdIcreChKAT42pYHQ10oo0ohK'),
+(3, 0, 'Julian Pernia', 'julianpernia_92@hotmail.com', '$2y$10$Jgzb9vERHTRowz2o9t9NSOWQpuoVhPfF3EQ2CCf3yaTHJ9UTDpDOa'),
+(4, 0, 'Lola Pernia', 'lolapernia@gmail.com', '$2y$10$tVF6P5T6yZxYU.QIRpD3fOXlDOidLwiab3kPUz/uX/oN9BonVwlQi'),
+(8, 0, 'Olga Molian', 'mama@gmail.com', '$2y$10$AnfaGVCLRlWy5DMxMYALeO6bRft8YYDWb22GKOAHdPQypg9FP/ZRq'),
+(15, 0, 'Emma Pernia', 'emmapernia@gmail.com', '$2y$10$N17nhl7lFK9o9GV2tivZceQSIDoxzOtWrTCOoh0qHg/I9nEKB.4j2'),
+(16, 0, 'David Chaile', 'davidc@gmail.com', '$2y$10$WqzQETaOgnfNqXVYKKOXUOU923iPZfFj7iDukzonI86SF6dbox6ui'),
+(17, 0, 'prueba', 'prueba@gmail.com', '$2y$10$zZiTBBO.oUmQaSMl4G20l.YIsj4hVOrA6kB80J9TX9iw3apyIqZx.'),
+(18, 0, 'prueba1', 'prueba1@gmail.com', '$2y$10$W3JDfGlQD.l0oxcXnF0.P.e1Tu4JhOKH3ts9/b9DNCocvvpYOFG5e'),
+(19, 0, 'Lola Pernia', 'lolipernia@gmail.com', '$2y$10$MhC85ROfl8Hiy9vk5PCiE.V4D3mX/1Qj/ccbQ4u5/F.2MY8r.3JZq'),
+(20, 0, 'Emi Per', 'emiper@gmail.com', '$2y$10$6BDk4jqzUkDj/Q.UKFpIk.nToGyaNsdoW5z5HFBY/81tPcQUauTwy'),
+(21, 0, 'Emmita Pernia', 'emmi@gmail.com', '$2y$10$SSviVqOnKICh9OhnvfpW3uPe34SMjsAU3A9ciwSrSoqVkbo96O0Xa');
 
 -- --------------------------------------------------------
 
@@ -119,12 +161,19 @@ INSERT INTO `weightclass` (`weightClass_id`, `weightClassName`, `maxWeight`, `mi
 (5, 'Lightweight', 70.2, 65.8),
 (6, 'Featherweight', 65.7, 61.2),
 (7, 'Bantamweight', 61.1, 56.7),
-(8, 'Flyweight', 56.6, 52.2),
-(20, 'dsadasd', 0, 0);
+(8, 'Flyweight', 56.6, 52.2);
 
 --
 -- Índices para tablas volcadas
 --
+
+--
+-- Indices de la tabla `comment`
+--
+ALTER TABLE `comment`
+  ADD PRIMARY KEY (`id_comment`),
+  ADD KEY `fk_comment_fighter` (`id_fighter`),
+  ADD KEY `fk_comment_user` (`user_id`);
 
 --
 -- Indices de la tabla `fighter`
@@ -150,26 +199,39 @@ ALTER TABLE `weightclass`
 --
 
 --
+-- AUTO_INCREMENT de la tabla `comment`
+--
+ALTER TABLE `comment`
+  MODIFY `id_comment` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
+
+--
 -- AUTO_INCREMENT de la tabla `fighter`
 --
 ALTER TABLE `fighter`
-  MODIFY `id_fighter` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=39;
+  MODIFY `id_fighter` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=61;
 
 --
 -- AUTO_INCREMENT de la tabla `user`
 --
 ALTER TABLE `user`
-  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
 
 --
 -- AUTO_INCREMENT de la tabla `weightclass`
 --
 ALTER TABLE `weightclass`
-  MODIFY `weightClass_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
+  MODIFY `weightClass_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
 
 --
 -- Restricciones para tablas volcadas
 --
+
+--
+-- Filtros para la tabla `comment`
+--
+ALTER TABLE `comment`
+  ADD CONSTRAINT `fk_comment_fighter` FOREIGN KEY (`id_fighter`) REFERENCES `fighter` (`id_fighter`),
+  ADD CONSTRAINT `fk_comment_user` FOREIGN KEY (`user_id`) REFERENCES `user` (`user_id`);
 
 --
 -- Filtros para la tabla `fighter`

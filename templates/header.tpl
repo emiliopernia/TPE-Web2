@@ -26,8 +26,8 @@
                 {if isset($smarty.session.email)}
                 <p>Usuario Logueado: {$smarty.session.userName}</p>
                 
-                {else}
-                <p>Registrese</p>
+                {*{else}
+                <p>Registrese</p>*}
                 {/if}
 
             </div>
@@ -43,7 +43,7 @@
                 <li><a href="abm">ABM</a></li>
                 {/if}
                 {if ({$smarty.session.addmin})=="1"}
-                <li><a href="users">USUARIOS</a></li>
+                <li><a href="showEditUsers">USUARIOS</a></li>
                 {/if}
             </ul>
         </nav>

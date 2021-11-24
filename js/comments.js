@@ -23,9 +23,6 @@ let form = document.querySelector("#API_comment");
     function getUserType(){
         let commentsForm=document.querySelector('#commentFormWrapper');
         app.user=commentsForm.dataset.user;
-        /*if(app.user=='admin'){
-            getButtonsId();
-        }*/
     }
 
     
@@ -64,8 +61,8 @@ let form = document.querySelector("#API_comment");
             "user_id": user_id,
             "id_fighter": id_fighter,
             }
-        form.reset();
-        return newComment;
+            form.reset();
+            return newComment;
         }else{
             return null;
         }

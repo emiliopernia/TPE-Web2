@@ -5,6 +5,8 @@ require_once('Controller/LoginController.php');
 require_once('Controller/RankingsController.php');
 require_once('Controller/AbmController.php');
 
+
+
 define('BASE_URL', '//'.$_SERVER['SERVER_NAME'] . ':' . $_SERVER['SERVER_PORT'] . dirname($_SERVER['PHP_SELF']).'/');
 
 if (!empty($_GET['action'])) {
@@ -83,7 +85,16 @@ switch ($params[0]) {
         break;
     case 'editWeightclass':
         $abmController->editWeightclass();
-     
+        break;
+    case 'showEditUsers':
+        $abmController->showUsers();
+        break;
+    case 'changeRol':
+        $abmController->changeUserRol($params[1]);
+        break;
+    case 'deleteUser':
+        $abmController->deleteUser($params[1]);
+        break;
     default: 
         echo('404 Page not found'); 
         break;

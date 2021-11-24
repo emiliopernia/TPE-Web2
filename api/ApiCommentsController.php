@@ -2,7 +2,7 @@
 require_once("api/ApiView.php");
 require_once('./Model/CommentsModel.php');
 
-class ApiFightersController{
+class ApiCommentsController{
 
     private $view;
     private $model;
