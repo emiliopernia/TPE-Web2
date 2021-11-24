@@ -18,9 +18,8 @@
         <div id="commentFormWrapper" data-user="{$user["user"]}"{if $user["user"]==null}class="hide"{/if}>
             <form id="API_comment">
         
-                    <div>
-                        <textarea name="commentIput" rows="5" cols="110" placeholder="Escribir comentario (max 400 caracteres)"></textarea>
-                    </div>
+                <textarea name="commentIput" rows="5" cols="110" placeholder="Escribir comentario (max 400 caracteres)"></textarea>
+                <div class="commentsScoreWrapper">  
                     <label for="score">Puntaje</label>
                     <select name="score">
                         <option value="0">seleccionar</option>
@@ -33,6 +32,7 @@
                     <input id="idFighterInput" type="hidden" name="id_fighter" value="{$fighter->id_fighter}">
                     <input id="idUserInput" type="hidden" name="id" value="{$user["id"]}">
                     <input type="submit" value="Enviar" id="btn-addComment">
+                </div>
     
             </form>
         </div>
@@ -40,8 +40,10 @@
     <div id= "comments" class="listOfCommentsWrapper">
         <table>
             <thead>
-                <th>Comentario</th>
-                <th>Puntaje</th>
+                <tr>
+                    <th>Comentario</th>
+                    <th>Puntaje</th>
+                </tr>
             </thead>
 
             <tbody class="commentsBody">

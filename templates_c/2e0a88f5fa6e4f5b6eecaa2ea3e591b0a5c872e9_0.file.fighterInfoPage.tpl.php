@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.39, created on 2021-11-22 18:02:20
+/* Smarty version 3.1.39, created on 2021-11-24 22:20:12
   from 'C:\xampp\htdocs\Web2\TpePernia\templates\fighterInfoPage.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_619bcd1cba90e3_38726967',
+  'unifunc' => 'content_619eac8c3c2b19_53412775',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '2e0a88f5fa6e4f5b6eecaa2ea3e591b0a5c872e9' => 
     array (
       0 => 'C:\\xampp\\htdocs\\Web2\\TpePernia\\templates\\fighterInfoPage.tpl',
-      1 => 1637600536,
+      1 => 1637788787,
       2 => 'file',
     ),
   ),
@@ -23,7 +23,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:footer.tpl' => 1,
   ),
 ),false)) {
-function content_619bcd1cba90e3_38726967 (Smarty_Internal_Template $_smarty_tpl) {
+function content_619eac8c3c2b19_53412775 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender("file:header.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
 
@@ -56,9 +56,8 @@ $_smarty_tpl->_subTemplateRender("file:header.tpl", $_smarty_tpl->cache_id, $_sm
 "<?php if ($_smarty_tpl->tpl_vars['user']->value["user"] == null) {?>class="hide"<?php }?>>
             <form id="API_comment">
         
-                    <div>
-                        <textarea name="commentIput" rows="5" cols="110" placeholder="Escribir comentario (max 400 caracteres)"></textarea>
-                    </div>
+                <textarea name="commentIput" rows="5" cols="110" placeholder="Escribir comentario (max 400 caracteres)"></textarea>
+                <div class="commentsScoreWrapper">  
                     <label for="score">Puntaje</label>
                     <select name="score">
                         <option value="0">seleccionar</option>
@@ -73,6 +72,7 @@ $_smarty_tpl->_subTemplateRender("file:header.tpl", $_smarty_tpl->cache_id, $_sm
                     <input id="idUserInput" type="hidden" name="id" value="<?php echo $_smarty_tpl->tpl_vars['user']->value["id"];?>
 ">
                     <input type="submit" value="Enviar" id="btn-addComment">
+                </div>
     
             </form>
         </div>
@@ -80,8 +80,10 @@ $_smarty_tpl->_subTemplateRender("file:header.tpl", $_smarty_tpl->cache_id, $_sm
     <div id= "comments" class="listOfCommentsWrapper">
         <table>
             <thead>
-                <th>Comentario</th>
-                <th>Puntaje</th>
+                <tr>
+                    <th>Comentario</th>
+                    <th>Puntaje</th>
+                </tr>
             </thead>
 
             <tbody class="commentsBody">

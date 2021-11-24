@@ -7,6 +7,15 @@
     flex-direction: column;
 }
 
+.fighterWraper textarea{
+    width: 90%;
+}
+.fighterWraper label{
+    margin: 0;
+    color: black;
+}
+
+
 .listWraper{
     display: flex;
     justify-content: center;
@@ -47,3 +56,39 @@
 .fighterWraper ul li{
     list-style: none;
 }
+
+#API_comment{
+    display: flex;
+    align-items: center;
+}
+
+.commentsScoreWrapper{
+    display: flex;
+    width: 90%;
+}
+
+.commentsScoreWrapper label, .commentsScoreWrapper select, .commentsScoreWrapper input{
+    margin-left: 10px;
+}
+
+
+
+.listOfCommentsWrapper table tr{
+    width: 100%;
+    display: grid;
+    grid-template-columns: 5fr 2fr;
+}
+
+.listOfCommentsWrapper table{
+    display: flex;
+    flex-flow: column;
+    padding: 2px;
+    margin: 4px 10px;
+}
+
+.listOfCommentsWrapper th, .listOfCommentsWrapper td{
+    display: flex;
+    align-items: left;
+}
+
+
