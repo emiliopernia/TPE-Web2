@@ -3,7 +3,10 @@
 document.addEventListener("DOMContentLoaded", function(){
     const url= "api/comments";
 
-document.querySelector('#btn-addComment').addEventListener('click',sendComment);
+    document.querySelector('#btn-addComment').addEventListener('click',sendComment);
+    function start(){
+    document.querySelector('#selectScore').addEventListener('change',getCommentsByScore);
+}
 let form = document.querySelector("#API_comment");
 
 
@@ -25,7 +28,31 @@ let form = document.querySelector("#API_comment");
         app.user=commentsForm.dataset.user;
     }
 
-    
+    async function getCommentsByScore(){//filtro para el opcional #10
+        let selectedScore= document.querySelector('#selectScore').value;
+        let idFighter=document.querySelector("#idFighterInput").value;
+        
+        if(selectedScore!=0){
+            try{
+                let response = await fetch(`${url}/${idFighter}/${selectedScore}`);
+            
+                if(response.status===200){
+                    let comments = await response.json();
+                    app.comments= comments;
+                }
+                else if (response.status === 404){
+                    console.log("no existen comentarios para peleador id = "+idFighter)
+                    app.comments=[];
+                }
+                
+            }catch(e){
+                console.log(e);
+            }
+        }else{
+            getComments()
+        }
+        
+    }
     
 
     async function getComments(){
@@ -122,7 +149,9 @@ let form = document.querySelector("#API_comment");
         getComments();
     }
 
-
+    window.addEventListener("load", start, false);
+    
+    
     getComments();
     getUserType();
     

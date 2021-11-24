@@ -19,18 +19,24 @@ class CommentsModel{
         return  $lastId;
     }
 
-    function getAllComments(){
+    /*function getAllComments(){
         $query = $this->db->prepare('SELECT * FROM comment');
         $query->execute();
 
         return $query->fetchAll(PDO::FETCH_OBJ);
-    }
+    }*/
 
     function getFighterComments($id)
     {
-        $query = $this->db->prepare('SELECT * FROM comment INNER JOIN user ON comment.user_id = user.user_id WHERE id_fighter=?');
+        $query = $this->db->prepare('SELECT * FROM comment WHERE id_fighter=?');
         $query->execute(array($id));
 
+        return $query->fetchAll(PDO::FETCH_OBJ);
+    }
+
+    function getFighterCommentsByFilter($id,$score){
+        $query = $this->db->prepare('SELECT * FROM comment WHERE id_fighter=? AND score=?');
+        $query->execute(array($id,$score));
         return $query->fetchAll(PDO::FETCH_OBJ);
     }
 

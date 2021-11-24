@@ -16,6 +16,7 @@ $r = new Router();
 // arma la tabla de ruteo
 //$r->addRoute('comments', 'GET', 'ApiCommentsController', 'getAllFightersComments');
 $r->addRoute('comments/:ID', 'GET', 'ApiCommentsController', 'getFighterComments');
+$r->addRoute('comments/:ID/:Score', 'GET', 'ApiCommentsController', 'getFighterCommentsByFilter');
 $r->addRoute('comments', 'POST', 'ApiCommentsController', 'addComment');
 //$r->addRoute('comments/:ID', 'GET', 'ApiCommentsController','getParticularComment');esto como se resolveria? (con una variable para modificar el endpoint a comment, por ejemplo?)
 $r->addRoute('comments/:ID', 'DELETE', 'ApiCommentsController', 'deleteComment');

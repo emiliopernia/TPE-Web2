@@ -41,17 +41,7 @@ class ApiCommentsController{
         }   
     }
 
-    /*Aun no lo uso
-    function getAllFightersComments(){
-        
-        $comments = $this->model->getAllComments();
 
-        if ($comments) {
-            $this->view->response($comments, 200);
-        } else {
-            $this->view->response("No se pueden obtener comentarios", 404);
-        }
-    }*/
 
     function getFighterComments($params = null){
         $id = $params[':ID'];
@@ -64,17 +54,19 @@ class ApiCommentsController{
         }
     }
     
-    /*Aun sin uso
-    function getParticularComment($params = null){
-        $id = $params[':ID'];
-        $comment = $this->model->getParticularComment($id);
+    function getFighterCommentsByFilter($params=null){
+        $id=$params[':ID'];
+        $score=$params[':Score'];
+        $comment = $this->model->getFighterCommentsByFilter($id,$score);
 
         if ($comment) {
             $this->view->response($comment, 200);
         } else {
-            $this->view->response("No existe el comentario con el id={$id}", 404);
+            $this->view->response("No se encontraron comentarios para este peleador", 404);
         }
-    }*/
+    
+
+    }
 
     function deleteComment($params=null){
         if($this->helper->isAdmin()){

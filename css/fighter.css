@@ -76,7 +76,7 @@
 .listOfCommentsWrapper table tr{
     width: 100%;
     display: grid;
-    grid-template-columns: 5fr 2fr;
+    grid-template-columns: 5fr 2fr 1fr;
 }
 
 .listOfCommentsWrapper table{

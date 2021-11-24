@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.39, created on 2021-11-24 22:20:12
+/* Smarty version 3.1.39, created on 2021-11-24 22:51:25
   from 'C:\xampp\htdocs\Web2\TpePernia\templates\fighterInfoPage.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_619eac8c3c2b19_53412775',
+  'unifunc' => 'content_619eb3ddeaa298_64896281',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '2e0a88f5fa6e4f5b6eecaa2ea3e591b0a5c872e9' => 
     array (
       0 => 'C:\\xampp\\htdocs\\Web2\\TpePernia\\templates\\fighterInfoPage.tpl',
-      1 => 1637788787,
+      1 => 1637790684,
       2 => 'file',
     ),
   ),
@@ -23,7 +23,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:footer.tpl' => 1,
   ),
 ),false)) {
-function content_619eac8c3c2b19_53412775 (Smarty_Internal_Template $_smarty_tpl) {
+function content_619eb3ddeaa298_64896281 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender("file:header.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
 
@@ -82,7 +82,14 @@ $_smarty_tpl->_subTemplateRender("file:header.tpl", $_smarty_tpl->cache_id, $_sm
             <thead>
                 <tr>
                     <th>Comentario</th>
-                    <th>Puntaje</th>
+                    <th>Puntaje<select id= "selectScore" name="selectScore">
+                        <option value="0"></option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                    </select></th>
                 </tr>
             </thead>
 
