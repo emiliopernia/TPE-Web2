@@ -28,7 +28,7 @@ class LoggedHelper{
 
     function checkAutorization(){
         {
-            session_start();
+            //session_start();
             if (isset($_SESSION['ID'])&&isset($_SESSION['addmin'])) {
                 $id = $_SESSION['ID'];
                 $user = $_SESSION['addmin'];

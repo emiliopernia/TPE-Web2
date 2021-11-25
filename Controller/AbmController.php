@@ -2,7 +2,7 @@
 
 require_once('./Model/FightersModel.php');
 require_once('./Model/WeightclassModel.php');
-require_once('./View/AbmView.php');
+require_once('./View/FightersView.php');
 require_once('./Helpers/LoggedHelper.php');
 require_once('./Model/UserModel.php');
 require_once('./View/UserView.php');
@@ -21,7 +21,7 @@ class AbmController{
 
         $this->model= new FightersModel();
         $this->weightClassModel= new WeightclassModel();
-        $this->view= new AbmView();
+        $this->view= new FightersView();
         $this->helper= new LoggedHelper();
         $this->userModel= new UserModel();
         $this->usersView= new UserView();
@@ -33,28 +33,7 @@ class AbmController{
     }
 
     function redirectUrl(){
-        header("Location:".BASE_URL."/abm");
-    }
-
-    function showFighters(){
-        $this->loadSelectWeightclass();
-        $fighters = $this->model->getFighters();
-        if ($this->helper->checkLogin()==true){
-            $this->view->showUserFightersView($fighters);
-        }else{
-            header("Location:".BASE_URL."/loginForm");
-        }
-    }
-
-    function showByCategory(){
-        $this->loadSelectWeightclass();   
-        $weightclassFighters = $this->model->getFightersByWeightclass($_POST['input_weightclass']);
-        if ($this->helper->checkLogin()==true){
-            $this->view->showUserFightersView($weightclassFighters);
-        }else{  
-            header("Location:".BASE_URL."/loginForm");
-        }
-        
+        header("Location:".BASE_URL."/fighters");
     }
 
     //funciones de abmfighter

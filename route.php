@@ -32,21 +32,33 @@ switch ($params[0]) {
     case 'home': 
         $homeController->showHome(); 
         break;
+
     case 'fighters': 
         $fightersController->showFighters(); 
         break;
     case 'showFighter': 
         $fightersController->showFighter($params[1]); 
         break;
-    case 'showFightersByWeightclass': 
-        $fightersController->showByCategory();
-        break;
     case 'rankings':
         $rankingsController->showRankings();
         break;
-    case 'abm':
-        $abmController->showFighters();
+        //login
+    case 'loginForm': 
+        $loginController->showLoginForm();
         break;
+    case 'showRegister':
+            $loginController->showRegisterForm();
+            break;
+    case 'register':
+        $loginController->register();
+        break;  
+    case 'login':
+        $loginController->loginForm();
+        break;  
+    case 'logout':
+        $loginController->logout();
+        break; 
+        //abm
     case 'addFighter':
         $abmController->addFighter();
         break;
@@ -59,29 +71,11 @@ switch ($params[0]) {
     case 'editFighter':
         $abmController->editFighter($params[1]);
         break;
-    case 'userFighters': 
-        $abmController->showFighters(); 
-        break; 
-    case 'userWeightclass': 
-        $abmController->showByCategory();
-        break;
-    case 'loginForm': 
-        $loginController->showLoginForm();
-        break;
-    case 'register':
-        $loginController->register();
-        break;  
-    case 'login':
-        $loginController->loginForm();
-        break;  
-    case 'logout':
-        $loginController->logout();
-        break; 
     case 'createWeightclass':
         $abmController->createNewWeightclass();
         break; 
     case 'deleteWeightclass':
-        $abmController->deleteWeightclass() ;
+        $abmController->deleteWeightclass();
         break;
     case 'editWeightclass':
         $abmController->editWeightclass();

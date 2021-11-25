@@ -37,9 +37,6 @@
                 <li><a href="rankings">RANKINGS</a></li>
                 <li><a href="fighters">PELEADORES</a></li>
                 <li><a href="loginForm">REGISTRARSE</a></li>
-                {if isset($smarty.session.email)}
-                <li><a href="abm">ABM</a></li>
-                {/if}
                 {if ({$smarty.session.addmin})=="1"}
                 <li><a href="showEditUsers">USUARIOS</a></li>
                 {/if}

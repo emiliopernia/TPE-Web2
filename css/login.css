@@ -17,6 +17,13 @@
 
 }
 
+.div-login form a{
+    font-size: smaller;
+    display: flex;
+    justify-content: flex-end;
+    color: whitesmoke;
+}
+
 .div-login h3 {
     background-color: rgba(167, 0, 0, 0.808);
     margin: 0px;

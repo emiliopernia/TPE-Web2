@@ -28,23 +28,21 @@ class FightersController{
 
     function showFighters(){
         $this->loadSelectWeightclass();
-        $fighters = $this->fightersModel->getFighters();
-        $this->view->showFightersView($fighters);        
-    }   
+        if(isset($_POST['input_weightclass'])){
+            $weightclassFighters = $this->fightersModel->getFightersByWeightclass($_POST['input_weightclass']);
+            $this->view->showFightersView($weightclassFighters);
+        }else{
+            $fighters = $this->fightersModel->getFighters();
+            $this->view->showFightersView($fighters);            
+        }
+    }
+
+            
     
     function showFighter($id){
         $user=$this->helper->checkAutorization();
         $fighter=$this->fightersModel->getFighter($id);
         $this->view->showFighterView($fighter,$user);
-    }
-
-    function showByCategory(){
-        $this->loadSelectWeightclass();   
-        if (!empty ($_POST)) {
-            $weightclassFighters = $this->fightersModel->getFightersByWeightclass($_POST['input_weightclass']); 
-        }
-           
-        $this->view->showFightersView($weightclassFighters); 
     }
 
 }

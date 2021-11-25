@@ -28,6 +28,14 @@ class LoginController{
         }
     }
 
+    function showRegisterForm(){
+        if ($this->helper->checkLogin()==true){
+            $this->view->showLoginForm("Logueado");
+        }else{
+            $this->view->showRegisterForm();
+        }
+    }
+
     function register(){
         if(!empty($_POST['name'])&&!empty($_POST['email'])&&!empty($_POST['password'])){
             $userName=$_POST['name'];

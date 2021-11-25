@@ -1,5 +1,5 @@
 {include file="header.tpl" }
-    <h1 class="users-title">Usuarios</h1>
+    <h1 class="table-title">Usuarios</h1>
     <table class="table">
         <thead>
             <th>Nombre</th>

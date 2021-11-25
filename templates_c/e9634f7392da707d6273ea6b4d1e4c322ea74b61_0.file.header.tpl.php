@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.39, created on 2021-11-24 21:10:49
+/* Smarty version 3.1.39, created on 2021-11-25 01:34:47
   from 'C:\xampp\htdocs\Web2\TpePernia\templates\header.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_619e9c49f3f730_04051392',
+  'unifunc' => 'content_619eda276620f9_65569266',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'e9634f7392da707d6273ea6b4d1e4c322ea74b61' => 
     array (
       0 => 'C:\\xampp\\htdocs\\Web2\\TpePernia\\templates\\header.tpl',
-      1 => 1637784648,
+      1 => 1637800355,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_619e9c49f3f730_04051392 (Smarty_Internal_Template $_smarty_tpl) {
+function content_619eda276620f9_65569266 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <html lang="en">
 <head>
@@ -64,9 +64,6 @@ function content_619e9c49f3f730_04051392 (Smarty_Internal_Template $_smarty_tpl)
                 <li><a href="rankings">RANKINGS</a></li>
                 <li><a href="fighters">PELEADORES</a></li>
                 <li><a href="loginForm">REGISTRARSE</a></li>
-                <?php if ((isset($_SESSION['email']))) {?>
-                <li><a href="abm">ABM</a></li>
-                <?php }?>
                 <?php ob_start();
 echo $_SESSION['addmin'];
 $_prefixVariable1 = ob_get_clean();

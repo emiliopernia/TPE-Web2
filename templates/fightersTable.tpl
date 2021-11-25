@@ -1,8 +1,8 @@
 {include file="header.tpl" }
 
-<h1 class="fighters-title">Peleadores</h1>
+<h1 class="table-title">Peleadores</h1>
 <div class="filter">
-    <form action="showFightersByWeightclass" method=POST>
+    <form action="fighters" method=POST>
         <select name= "input_weightclass">
             {foreach from=$weightclasses item=weightclass}
                 <option value='{$weightclass->weightClass_id}'>{$weightclass->weightClassName}</option>
@@ -27,10 +27,88 @@
             <td>{$fighter->nickname}</td>
             <td>{$fighter->weightClassName}</td>
             <td><a href="showFighter/{$fighter->id_fighter}"><img src="images/boton.png" alt="Ver mas"></a></td>
+            {if isset($smarty.session.email)}
+                <td><a href="deleteFighter/{$fighter->id_fighter}"><img src="images/bin.png" alt="Borrar"></a></td>
+                <td><a href="editFighterPage/{$fighter->id_fighter}"><img src="images/edit.png" alt="Editar"></a></td>
+            {/if}
         </tr> 
         {/foreach}
         
     </tbody>
 </table>
+
+{if isset($smarty.session.email)}
+
+    <div class="formsWrapper">
+        <div class="formEdit">
+            <form action="addFighter" method=POST>
+                <h2>Agregar Peleadores</h2>
+                <label>Nombre y Apellido</label>
+                <input name="name" type="text" placeholder="Nombre y Apellido..." required>
+                <label>Apodo</label>
+                <input name="nickname" type="text" placeholder="Apodo..." required>
+                <label>Nacionalidad</label>
+                <input name="nationality" type="text" placeholder="Nacionalidad..." required>
+                <label>Edad</label>
+                <input name="age" type="number" placeholder="Edad..." required>
+                <label>Record</label>
+                <input name="record" type="text" placeholder="0/0/0" required>
+                <label>Altura</label>
+                <input name="height" type="number" placeholder="Altura en cm..." required>
+                <label>Peso</label>
+                <input name="weight" type="number" placeholder="Peso en kg..." required>
+                <label>Categoria</label>
+                <select name= "weightclass">
+                    {foreach from=$weightclasses item=weightclass}
+                            <option value='{$weightclass->weightClass_id}'>{$weightclass->weightClassName}</option>                     
+                    {/foreach}
+                </select>
+                <label>Ranking</label>
+                <input name="rank" type="number" placeholder="ranking..." required>
+
+                <button>CARGAR</button>        
+            </form>   
+        </div>
+
+        <div class="formEdit">
+            <form action="createWeightclass" method=POST>
+                <h2>Crear Categoria</h2>
+                <label>Categoria</label>
+                <input name="weightclass" type="text" placeholder="Categoria..." required>
+                <label>Peso Maximo</label>
+                <input name="maxWeight" type="number" placeholder="Peso Maximo..." required>
+                <label>Peso Minimo</label>
+                <input name="minWeight" type="number" placeholder="Peso Minimo..." required>
+                <button>ENVIAR</button>
+            </form>
+            
+            <form action="editWeightclass" method=POST>
+                <h2>Editar Categoria</h2>
+                <select name= "id">
+                    {foreach from=$weightclasses item=weightclass}
+                        <option value='{$weightclass->weightClass_id}'>{$weightclass->weightClassName}</option>
+                    {/foreach}
+                </select>
+                <label>Categoria</label>
+                <input name="weightclass" type="text" placeholder="Categoria..." required>
+                <label>Peso Maximo</label>
+                <input name="maxWeight" type="number" placeholder="Peso Maximo..." required>
+                <label>Peso Minimo</label>
+                <input name="minWeight" type="number" placeholder="Peso Minimo..." required>
+                <button>ENVIAR</button>
+            </form>
+            
+            <form action="deleteWeightclass" method=POST>
+                <h2>Borrar Categoria</h2>
+                <select name= "weightclass">
+                    {foreach from=$weightclasses item=weightclass}
+                        <option value='{$weightclass->weightClass_id}'>{$weightclass->weightClassName}</option>
+                    {/foreach}
+                </select>
+                <button>ENVIAR</button>
+            </form>
+        </div>
+    </div>
+{/if}
 
 {include file="footer.tpl" }

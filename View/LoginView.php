@@ -15,4 +15,8 @@ class LoginView{
         $this->smarty->display('templates/login.tpl');
     }
 
+    function showRegisterForm(){
+        $this->smarty->display('templates/register.tpl');
+    }
+
 }

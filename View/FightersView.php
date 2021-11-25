@@ -28,4 +28,10 @@ class FightersView{
         $this->smarty->display('templates/fighterInfoPage.tpl');
     }
 
+    function editFighter($fighter){
+        $this->smarty->assign('fighter',$fighter);
+        $this->smarty->display('templates/editFighterForm.tpl');
+       
+    }
+
 }
