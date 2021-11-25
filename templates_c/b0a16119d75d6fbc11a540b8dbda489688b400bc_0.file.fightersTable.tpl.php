@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.39, created on 2021-11-25 01:42:29
+/* Smarty version 3.1.39, created on 2021-11-25 03:10:26
   from 'C:\xampp\htdocs\Web2\TpePernia\templates\fightersTable.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_619edbf5249c46_43538887',
+  'unifunc' => 'content_619ef092562019_47506814',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'b0a16119d75d6fbc11a540b8dbda489688b400bc' => 
     array (
       0 => 'C:\\xampp\\htdocs\\Web2\\TpePernia\\templates\\fightersTable.tpl',
-      1 => 1637800932,
+      1 => 1637806198,
       2 => 'file',
     ),
   ),
@@ -22,7 +22,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:footer.tpl' => 1,
   ),
 ),false)) {
-function content_619edbf5249c46_43538887 (Smarty_Internal_Template $_smarty_tpl) {
+function content_619ef092562019_47506814 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender("file:header.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
 
@@ -53,7 +53,12 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
         <th>Nombre</th>
         <th>Apodo</th>
         <th>Categoria</th>
+        <?php if ((isset($_SESSION['email']))) {?>
+        <th>Borrar</th>
+        <th>Editar</th>
+        <?php } else { ?>
         <th>Estadisticas</th>
+        <?php }?>
     </thead>
     <tbody>
         <?php

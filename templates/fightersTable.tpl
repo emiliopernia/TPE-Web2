@@ -18,7 +18,12 @@
         <th>Nombre</th>
         <th>Apodo</th>
         <th>Categoria</th>
+        {if isset($smarty.session.email)}
+        <th>Borrar</th>
+        <th>Editar</th>
+        {else}
         <th>Estadisticas</th>
+        {/if}
     </thead>
     <tbody>
         {foreach from=$fighters item=fighter}    
