@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.39, created on 2021-11-25 03:04:11
+/* Smarty version 3.1.39, created on 2021-11-25 11:41:31
   from 'C:\xampp\htdocs\Web2\TpePernia\templates\fighterInfoPage.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_619eef1ba60f90_08893120',
+  'unifunc' => 'content_619f685b99bb90_39378770',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '2e0a88f5fa6e4f5b6eecaa2ea3e591b0a5c872e9' => 
     array (
       0 => 'C:\\xampp\\htdocs\\Web2\\TpePernia\\templates\\fighterInfoPage.tpl',
-      1 => 1637805848,
+      1 => 1637836608,
       2 => 'file',
     ),
   ),
@@ -23,7 +23,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:footer.tpl' => 1,
   ),
 ),false)) {
-function content_619eef1ba60f90_08893120 (Smarty_Internal_Template $_smarty_tpl) {
+function content_619f685b99bb90_39378770 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender("file:header.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
 
@@ -76,8 +76,7 @@ $_smarty_tpl->_subTemplateRender("file:header.tpl", $_smarty_tpl->cache_id, $_sm
     
             </form>
         </div>
-    
-    <div id= "comments" class="listOfCommentsWrapper">
+        <div id= "comments" class="listOfCommentsWrapper">
         <table>
             <thead>
                 <tr>

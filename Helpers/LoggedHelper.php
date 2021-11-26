@@ -7,6 +7,12 @@ class LoggedHelper{
     function __construct(){        
     }
 
+    private function start(){
+        if(session_status() != PHP_SESSION_ACTIVE){
+            session_start();
+        }
+    }
+
     function checkLogin(){
         session_start();
         if(isset($_SESSION['email'])){
@@ -19,6 +25,7 @@ class LoggedHelper{
         $_SESSION['userName'] = $user->userName;
         $_SESSION['addmin'] = $user->admin;
         $_SESSION['email'] = $user->email;
+        //aca estaria bueno hacer un $_SESSION['lastActivity']=time(), para dar caducidad a la sesion por tiempo!
     }
 
     function logout(){
@@ -28,7 +35,7 @@ class LoggedHelper{
 
     function checkAutorization(){
         {
-            session_start();
+            $this->start();
             if (isset($_SESSION['ID'])&&isset($_SESSION['addmin'])) {
                 $id = $_SESSION['ID'];
                 $user = $_SESSION['addmin'];

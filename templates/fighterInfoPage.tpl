@@ -36,7 +36,7 @@
     
             </form>
         </div>
-    
+    {*Esto tendria que meterlo en un comments.tpl*}
     <div id= "comments" class="listOfCommentsWrapper">
         <table>
             <thead>
